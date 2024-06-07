@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Button, IconButton } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import PlantLogo from '../../assets/Plant.png'
 
 function Header() {
   return (
@@ -10,11 +10,10 @@ function Header() {
           color="inherit"
           aria-label="menu"
           size="large">
-          <MenuIcon />
+          <img src={PlantLogo} alt="Logo" style={{ width: '25px', height: 'auto' }} />
         </IconButton>
-        <Button color="inherit">About me</Button>
+        <Button color="inherit">About</Button>
         <Button color="inherit">Projects</Button>
-        <Button color="inherit">Reach Out</Button>
       </Toolbar>
     </AppBar>
   );
