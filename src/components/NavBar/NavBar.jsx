@@ -3,7 +3,7 @@ import PlantLogo from '../../assets/Plant.png'
 
 function Header() {
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Toolbar>
         <IconButton
           edge="start"
