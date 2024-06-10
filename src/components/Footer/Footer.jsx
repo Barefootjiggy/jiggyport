@@ -36,8 +36,8 @@ function Footer() {
   };
 
   return (
-    <AppBar position="fixed" color="primary" style={{ top: 'auto', bottom: 0 }}>
-      <Toolbar>
+    <AppBar position='static' color="primary" style={{ top: 'auto', bottom: 0 }}>
+      <Toolbar style={{ justifyContent: 'center' }}>  {/* Center content within the toolbar */}
         <BottomNavigation
           value={value}
           onChange={handleChange}

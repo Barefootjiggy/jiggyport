@@ -1,4 +1,5 @@
 import { Grid, Typography } from '@mui/material';
+import Projects from '../../components/Projects/Projects'
 import Django from '../../assets/Django.png'; 
 import Express from '../../assets/Express.png'; 
 import MongoDB from '../../assets/MongoDB.png'; 
@@ -37,6 +38,7 @@ function Homepage() {
         {createSkillItem("HTML", Html)}
         {createSkillItem("JavaScript", Javascript)}
       </Grid>
+      <Projects />
       </>
   );
 }
