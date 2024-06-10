@@ -1,7 +1,10 @@
 import { AppBar, Toolbar, Button, IconButton } from '@mui/material';
-import PlantLogo from '../../assets/Plant.png'
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import PlantLogo from '../../assets/Plant.png';
 
 function Header() {
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
   return (
     <AppBar position="sticky">
       <Toolbar>
@@ -9,11 +12,13 @@ function Header() {
           edge="start"
           color="inherit"
           aria-label="menu"
-          size="large">
+          size="large"
+          onClick={() => navigate('/')} // Add onClick handler to navigate to the homepage
+        >
           <img src={PlantLogo} alt="Logo" style={{ width: '25px', height: 'auto' }} />
         </IconButton>
-        <Button color="inherit">About</Button>
-        <Button color="inherit">Projects</Button>
+        <Button color="inherit" onClick={() => navigate('/about')}>About</Button> 
+        <Button color="inherit" onClick={() => navigate('/projects')}>Projects</Button> 
       </Toolbar>
     </AppBar>
   );
