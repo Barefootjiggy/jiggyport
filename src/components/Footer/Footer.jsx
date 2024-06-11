@@ -43,10 +43,10 @@ function Footer() {
           onChange={handleChange}
           showLabels
         >
-          <BottomNavigationAction label="Github" icon={<GitHubIcon />} />
-          <BottomNavigationAction label="Resume" icon={<PictureAsPdfIcon />} />
-          <BottomNavigationAction label="LinkedIn" icon={<LinkedInIcon />} />
-          <BottomNavigationAction label="Contact" icon={<MessageIcon />} />
+          <BottomNavigationAction label="" icon={<GitHubIcon />} />
+          <BottomNavigationAction label="" icon={<PictureAsPdfIcon />} />
+          <BottomNavigationAction label="" icon={<LinkedInIcon />} />
+          <BottomNavigationAction label="" icon={<MessageIcon />} />
         </BottomNavigation>
       </Toolbar>
     </AppBar>

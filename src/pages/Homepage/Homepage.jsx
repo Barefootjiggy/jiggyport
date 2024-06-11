@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, Avatar, Box, styled } from '@mui/material';
 import Projects from '../../components/Projects/Projects'
 import Django from '../../assets/Django.png'; 
 import Express from '../../assets/Express.png'; 
@@ -13,16 +13,40 @@ import Nodejs from '../../assets/Nodejs.png';
 import Css from '../../assets/Css.png'; 
 import Html from '../../assets/Html.png'; 
 import Javascript from '../../assets/Javascript.png';
+import Profile from '../../assets/Profile.png'
+
+// Styled components
+const StyledAvatar = styled(Avatar)({
+  width: 200, // Customize the size of your avatar
+  height: 220,
+  margin: '20px auto', // Center horizontally and add vertical space
+  
+});
+
+const CenteredTypography = styled(Typography)({
+  textAlign: 'center',
+  color: '#482121',
+  marginBottom: '20px', // Space after the text
+});
+
+const StyledGridItem = styled(Grid)({
+  textAlign: 'center'
+});
+
+const ProfileBox = styled(Box)({
+  textAlign: 'center'
+});
 
 function Homepage() {
   return (
-    <>
-      <Typography variant="h4" component="h1" gutterBottom style={{ color: '#482121', textAlign: 'center', marginBottom: '20px' }}>
-        Joshua Pierre
-      </Typography>
-      <Typography variant="h6" component="p" style={{ color: '#482121', textAlign: 'center', marginBottom: '40px' }}>
-        I'm a passionate developer skilled in a range of technologies, striving to build impactful software solutions.
-      </Typography>
+    <ProfileBox>
+    <CenteredTypography variant="h4" component="h1" gutterBottom m= '20px auto'>
+      Joshua Pierre
+    </CenteredTypography>
+    <StyledAvatar src={Profile} alt="Joshua Pierre" />
+    <CenteredTypography variant="h6" component="p" padding=" 0 20px" >
+    I am a Software Engineer with expertise in both front-end and back-end technologies. With a background in the healthcare industry creating medical authorizations, I excelled as a top performer, generating over 300+ authorizations monthly, while upholding stringent compliance and security standards. My experience at General Assembly's 12-week software-engineering bootcamp sharpened my time-management skills, enabling me to meet strict deadlines and deliver labs and projects. I am driven to apply these skills in a professional tech environment, aiming to become a top contributor.
+    </CenteredTypography>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         {createSkillItem("Django", Django)}
         {createSkillItem("Express", Express)}
@@ -39,16 +63,17 @@ function Homepage() {
         {createSkillItem("JavaScript", Javascript)}
       </Grid>
       <Projects />
-      </>
+      </ProfileBox>
+      
   );
 }
 
 function createSkillItem(name, imageUrl) {
   return (
-    <Grid item xs={4} md={2} style={{ textAlign: 'center' }}>
-      <img src={imageUrl} alt={name} style={{ width: '50px', height: '40px', marginBottom: '10px' }} />
+    <StyledGridItem item xs={4} md={2} style={{ textAlign: 'center' }}>
+      <img src={imageUrl} alt={name} style={{ width: '50px', height: '50px', marginBottom: '10px' }} />
       <Typography variant="subtitle2" style={{ color: '#482121' }}>{name}</Typography>
-    </Grid>
+    </StyledGridItem>
   );
 }
 

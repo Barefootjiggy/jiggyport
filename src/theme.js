@@ -28,7 +28,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           color: 'inherit',  // Icons will inherit the color from their parent container
-          fontSize: '24px',  // Standard size for icons, adjust as needed
+          fontSize: '40px',  // Standard size for icons, adjust as needed
         }
       }
     }
