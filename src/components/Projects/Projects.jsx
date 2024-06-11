@@ -1,9 +1,9 @@
-import { Button, Grid, Paper, Typography, Box, useTheme } from '@mui/material';
+import { Button, Grid, Paper, Typography, Box } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import Connect4Image from '../../assets/Classic-Connect4-Mobile2.png';
-import WOD4UImage from '../../assets/WOD4U-Mobile.png'
-import DutchImage from '../../assets/Dutch-Mobile.png'
-import CohortyImage from '../../assets/Cohorty-Desktop.png'
-
+import WOD4UImage from '../../assets/WOD4U-Mobile.png';
+import DutchImage from '../../assets/Dutch-Mobile.png';
+import CohortyImage from '../../assets/Cohorty-Desktop.png';
 
 // Example project data
 const projectsData = [
@@ -13,19 +13,39 @@ const projectsData = [
   { id: 4, title: "Cohorty", description: "Cohorty is a modern web application designed to facilitate the tracking of courses, students, and assignments for General Assembly. This app streamlines administrative tasks, enhances staff and administrator visibility, and provides a centralized platform for managing academic data. By centralizing these processes, we aim to improve the efficiency of administrative operations and provide staff with a user-friendly interface to track student progress.", url: "https://cohorty-frontend.vercel.app/", imageUrl: CohortyImage },
 ];
 
+const useStyles = makeStyles((theme) => ({
+  projectImage: {
+    maxWidth: '100%',
+    height: '500px',
+    marginBottom: '10px',
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: '50%',
+    },
+  },
+  projectTitle: {
+    color: theme.palette.primary.main,
+  },
+  projectDescription: {
+    color: theme.palette.primary.main,
+  },
+  projectPaper: {
+    padding: '20px',
+    margin: '10px',
+  },
+}));
+
 function Projects() {
-const theme = useTheme();
+  const classes = useStyles();
 
   return (
     <Grid container spacing={2}>
       {projectsData.map(project => (
         <Grid item xs={12} key={project.id}>
-          <Paper elevation={3} style={{ padding: '20px', margin: '10px' }}>
-            <Typography variant="h3" style={{ color: theme.palette.primary.main }} >{project.title}</Typography>
-            <img src={project.imageUrl} alt={project.title} style={{ maxWidth: '100%', height: 'auto', marginBottom: '10px' }} />
-
-            <Typography style={{ color: theme.palette.primary.main }} > {project.description}</Typography>
-            <Box display="flex" justifyContent="center" mt={2}>  {/* Added for centering the button */}
+          <Paper elevation={3} className={classes.projectPaper}>
+            <Typography variant="h3" className={classes.projectTitle}>{project.title}</Typography>
+            <img src={project.imageUrl} alt={project.title} className={classes.projectImage} />
+            <Typography className={classes.projectDescription}>{project.description}</Typography>
+            <Box display="flex" justifyContent="center" mt={2}>
               <Button
                 variant="contained"
                 onClick={() => window.open(project.url, '_blank')}
@@ -41,4 +61,3 @@ const theme = useTheme();
 }
 
 export default Projects;
-
