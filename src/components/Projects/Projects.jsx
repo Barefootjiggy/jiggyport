@@ -1,4 +1,4 @@
-import { Button, Grid, Paper, Typography, Box } from '@mui/material';
+import { Button, Grid, Paper, Typography, Box, useTheme } from '@mui/material';
 import Connect4Image from '../../assets/Classic-Connect4-Mobile2.png';
 import WOD4UImage from '../../assets/WOD4U-Mobile.png'
 import DutchImage from '../../assets/Dutch-Mobile.png'
@@ -14,15 +14,17 @@ const projectsData = [
 ];
 
 function Projects() {
+const theme = useTheme();
+
   return (
     <Grid container spacing={2}>
       {projectsData.map(project => (
         <Grid item xs={12} key={project.id}>
           <Paper elevation={3} style={{ padding: '20px', margin: '10px' }}>
-            <Typography variant="h5">{project.title}</Typography>
+            <Typography variant="h3" style={{ color: theme.palette.primary.main }} >{project.title}</Typography>
             <img src={project.imageUrl} alt={project.title} style={{ maxWidth: '100%', height: 'auto', marginBottom: '10px' }} />
 
-            <Typography>{project.description}</Typography>
+            <Typography style={{ color: theme.palette.primary.main }} > {project.description}</Typography>
             <Box display="flex" justifyContent="center" mt={2}>  {/* Added for centering the button */}
               <Button
                 variant="contained"
