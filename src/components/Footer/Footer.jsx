@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import MessageIcon from '@mui/icons-material/Message';
 
 function Footer() {
   const [value, setValue] = React.useState(0);
@@ -46,7 +45,6 @@ function Footer() {
           <BottomNavigationAction label="" icon={<GitHubIcon />} />
           <BottomNavigationAction label="" icon={<PictureAsPdfIcon />} />
           <BottomNavigationAction label="" icon={<LinkedInIcon />} />
-          <BottomNavigationAction label="" icon={<MessageIcon />} />
         </BottomNavigation>
       </Toolbar>
     </AppBar>

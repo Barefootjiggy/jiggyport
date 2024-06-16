@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, IconButton, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-// import PlantLogo from '../../assets/Plant.png';
 import HomeIcon from '@mui/icons-material/Home';
+import MailIcon from '@mui/icons-material/Mail';
 
 function Header() {
   const navigate = useNavigate();
@@ -15,8 +15,14 @@ function Header() {
             aria-label="home"
             onClick={() => navigate('/')}
           >
-            <HomeIcon></HomeIcon>
-            {/* <img src={PlantLogo} alt="Logo" style={{ width: '25px', height: 'auto' }} /> */}
+            <HomeIcon />
+          </IconButton>
+          <IconButton
+            color="inherit"
+            aria-label="email"
+            onClick={() => window.location.href = 'mailto:jpgiant@yahoo.com'}
+          >
+            <MailIcon />
           </IconButton>
         </Box>
       </Toolbar>
