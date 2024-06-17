@@ -17,16 +17,16 @@ import Profile from '../../assets/Profile.png'
 
 // Styled components
 const StyledAvatar = styled(Avatar)({
-  width: 200, // Customize the size of your avatar
+  width: 200, 
   height: 220,
-  margin: '20px auto', // Center horizontally and add vertical space
+  margin: '20px auto', 
   
 });
 
 const CenteredTypography = styled(Typography)({
   textAlign: 'center',
   color: '#482121',
-  marginBottom: '20px', // Space after the text
+  marginBottom: '20px', 
 });
 
 const StyledGridItem = styled(Grid)({

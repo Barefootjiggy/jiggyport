@@ -5,7 +5,6 @@ import WOD4UImage from '../../assets/WOD4U-Mobile.png';
 import DutchImage from '../../assets/Dutch-Mobile.png';
 import CohortyImage from '../../assets/Cohorty-Desktop.png';
 
-// Example project data
 const projectsData = [
   { id: 1, title: "Connect 4", description: "Connect Four is a classic two-player connection game in which players choose a color and then take turns dropping colored discs into a grid. The objective is to be the first to form a horizontal, vertical, or diagonal line of four discs of your color. In this version, players are able to click anywhere and it comes down to which way they decide to play. No matter what, first person to get 4 in a row horizontally, vertically, or diagonally will be the winner. Players will be able to click through different themes that each have their own uniqueness to them.", url: "https://connect-4-hazel.vercel.app/", imageUrl: Connect4Image  },
   { id: 2, title: "WOD4U", description: "WOD4U is an app where users can get workouts of the day given to them as well as the ability to create, update, and delete their own workouts. Users also have the ability to comment on workouts and share their expereince or encouragement to user that posted the workout. Workouts that are created by users will be added to the preset database of workouts that the app comes with.", url: "https://wod4u.netlify.app/", imageUrl: WOD4UImage },
