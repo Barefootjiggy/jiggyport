@@ -33,7 +33,7 @@ function Footer() {
   };
 
   return (
-    <AppBar position='static' color="primary" style={{ top: 'auto', bottom: 0 }}>
+    <AppBar position='sticky' color="primary" style={{ top: 'auto', bottom: 0 }}>
       <Toolbar style={{ justifyContent: 'center' }}>  
         <BottomNavigation
           value={value}
