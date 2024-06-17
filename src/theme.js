@@ -24,11 +24,11 @@ const theme = createTheme({
         }
       `,
     },
-    MuiSvgIcon: { // Applies to all SVG icons
+    MuiSvgIcon: { 
       styleOverrides: {
         root: {
-          color: 'inherit',  // Icons will inherit the color from their parent container
-          fontSize: '40px',  // Standard size for icons, adjust as needed
+          color: 'inherit',  
+          fontSize: '40px',  
         }
       }
     }
