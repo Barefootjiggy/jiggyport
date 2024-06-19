@@ -11,6 +11,9 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'Roboto, Arial, sans-serif',
+    allVariants: {
+      color: '#482121',  // Use primary color for all typography variants
+    },
   },
   components: {
     MuiCssBaseline: {
