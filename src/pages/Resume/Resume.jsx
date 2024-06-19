@@ -5,6 +5,9 @@ function Resume() {
     <Box p={3}>
       <Typography variant="h4" gutterBottom>Joshua Pierre</Typography>
 
+      <Typography variant="h6" gutterBottom>Located: Brooklyn, NY</Typography>
+      <Typography variant="h6" gutterBottom>Contact: 570-540-6871</Typography>
+
       <Box mt={3} mb={3}>
         <Typography variant="h5" gutterBottom>SUMMARY</Typography>
         <Typography variant="body1">
@@ -23,6 +26,24 @@ function Resume() {
 
       <Box mt={3} mb={3}>
         <Typography variant="h5" gutterBottom>TECH PROJECTS</Typography>
+        <Box mt={2}>
+          <Typography variant="h6">Connect 4 - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://connect-4-hazel.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+          <Typography variant="body1">
+            JavaScript | HTML, CSS<br />
+            Engage in a strategic battle of wits with a Connect 4 game that allows players to choose from several visual themes.<br />
+            Engineered a responsive game logic in JavaScript, achieving a smooth and error-free playing experience.<br />
+            Customized the user interface with CSS, providing multiple themes that enhance user engagement and visual appeal.
+          </Typography>
+        </Box>
+        <Box mt={2}>
+          <Typography variant="h6">WOD4U - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://wod4u.netlify.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+          <Typography variant="body1">
+            JavaScript | MongoDB, Node.js, Express<br />
+            Elevate your fitness journey with WOD4U, an app that offers a comprehensive library of workouts with full customization options.<br />
+            Architected a robust backend in Node.js to manage a large dataset of workouts, ensuring scalability and performance.<br />
+            Implemented a user-friendly interface for creating, updating, and deleting workouts, empowering users to tailor their fitness plans.
+          </Typography>
+        </Box>
         <Box mt={2}>
           <Typography variant="h6">Dutch - <a href="https://github.com/Barefootjiggy/Dutch-Frontend" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://frontend-dutch-by-wahgee.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
           <Typography variant="body1">
