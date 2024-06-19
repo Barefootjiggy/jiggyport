@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   projectImage: {
     maxWidth: '100%',
     height: '300px',
+    objectFit: 'contain',
     marginBottom: '10px',
     [theme.breakpoints.up('sm')]: {
       maxWidth: '50%',
