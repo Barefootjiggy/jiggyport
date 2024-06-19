@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, BottomNavigation, BottomNavigationAction } from '@mui/material';
+import { AppBar, Toolbar, BottomNavigation, BottomNavigationAction, Tooltip } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
@@ -40,9 +40,23 @@ function Footer() {
           onChange={handleChange}
           showLabels
         >
-          <BottomNavigationAction label="" icon={<GitHubIcon />} />
-          <BottomNavigationAction label="" icon={<PictureAsPdfIcon />} />
-          <BottomNavigationAction label="" icon={<LinkedInIcon />} />
+          <BottomNavigationAction 
+            label="GitHub" 
+            icon={<GitHubIcon />} 
+            onClick={() => handleChange(null, 0)}
+          />
+          <Tooltip title="View Resume" arrow>
+            <BottomNavigationAction 
+              label="Resume" 
+              icon={<PictureAsPdfIcon />} 
+              onClick={() => handleChange(null, 1)}
+            />
+          </Tooltip>
+          <BottomNavigationAction 
+            label="LinkedIn" 
+            icon={<LinkedInIcon />} 
+            onClick={() => handleChange(null, 2)}
+          />
         </BottomNavigation>
       </Toolbar>
     </AppBar>
