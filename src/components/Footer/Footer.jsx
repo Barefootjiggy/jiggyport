@@ -41,19 +41,19 @@ function Footer() {
           showLabels
         >
           <BottomNavigationAction 
-            label="GitHub" 
+            label="" 
             icon={<GitHubIcon />} 
             onClick={() => handleChange(null, 0)}
           />
-          <Tooltip title="View Resume" arrow>
+          <Tooltip title="Resume Download" arrow>
             <BottomNavigationAction 
-              label="Resume" 
+              label="" 
               icon={<PictureAsPdfIcon />} 
               onClick={() => handleChange(null, 1)}
             />
           </Tooltip>
           <BottomNavigationAction 
-            label="LinkedIn" 
+            label="" 
             icon={<LinkedInIcon />} 
             onClick={() => handleChange(null, 2)}
           />
