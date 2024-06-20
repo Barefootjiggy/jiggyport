@@ -8,12 +8,12 @@ function Resume() {
       <Typography variant="h6" gutterBottom>Located: Brooklyn, NY</Typography>
       <Typography variant="h6" gutterBottom>Contact: 570-540-6871</Typography>
 
-      <Box mt={3} mb={3}>
+      {/* <Box mt={3} mb={3}>
         <Typography variant="h5" gutterBottom>SUMMARY</Typography>
         <Typography variant="body1">
           I am a full stack Software Engineer with expertise in crafting solutions that harmoniously blend front-end aesthetics with back-end efficiency. With a background in the healthcare industry creating medical authorizations, I excelled as a top performer, generating over 300+ authorizations monthly, while upholding stringent compliance and security standards. My experience at General Assembly's 12-week software-engineering bootcamp sharpened my time-management skills, enabling me to meet strict deadlines and deliver labs and projects. I am driven to apply these skills in a professional tech environment, aiming to become a top contributor.
         </Typography>
-      </Box>
+      </Box> */}
 
       <Box mt={3} mb={3}>
         <Typography variant="h5" gutterBottom>SKILLS</Typography>
