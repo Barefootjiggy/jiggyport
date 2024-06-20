@@ -16,11 +16,11 @@ function Resume() {
       </Box> */}
 
       <Box mt={3} mb={3}>
-        <Typography variant="h5" gutterBottom>SKILLS</Typography>
+        <Typography variant="h5" gutterBottom>Key Stack Proficiencies</Typography>
         <Typography variant="body1">
           <strong>Languages:</strong> Python, JavaScript, HTML, CSS, SQL, Mongo, JSON<br />
           <strong>Libraries, Frameworks and Databases:</strong> React, Express.js, Django, MongoDB, RESTful Routing<br />
-          <strong>Systems:</strong> Epic, Salesforce, Guiding Care, Facets
+          {/* <strong>Systems:</strong> Epic, Salesforce, Guiding Care, Facets */}
         </Typography>
       </Box>
 
