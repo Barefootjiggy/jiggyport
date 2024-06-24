@@ -25,6 +25,19 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
+        <Typography variant="h5" gutterBottom>CLIENT PROJECTS</Typography>
+        <Box mt={2}>
+          <Typography variant="h6">Trainwithamandajane - <a href="https://trainwithamandajane.com/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+          <Typography variant="body1">
+            Wordpress | <br />
+            Train with Amanda Jane is a personalized fitness training website that offers a variety of workout plans, nutritional advice, and one-on-one coaching sessions to help clients achieve their fitness goals.<br />
+            Designed and developed with wordpress ensuring a user-friendly interface.<br />
+            Implemented a responsive design to provide a seamless experience across different devices.
+          </Typography>
+        </Box>
+      </Box>
+
+      <Box mt={3} mb={3}>
         <Typography variant="h5" gutterBottom>TECH PROJECTS</Typography>
         <Box mt={2}>
           <Typography variant="h6">Connect 4 - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://connect-4-hazel.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>

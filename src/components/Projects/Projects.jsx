@@ -56,7 +56,7 @@ function Projects() {
 
   return (
     <Container>
-      <Typography variant="h2" className={classes.sectionTitle}>Tech Projects</Typography>
+      <Typography variant="h2" className={classes.sectionTitle}>TECH PROJECTS</Typography>
       <Grid container spacing={2}>
         {projectsData.map(project => (
           <Grid item xs={12} key={project.id}>
@@ -83,7 +83,7 @@ function Projects() {
           </Grid>
         ))}
       </Grid>
-      <Typography variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center' }}>Client Projects</Typography>
+      <Typography variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center' }}>CLIENT PROJECTS</Typography>
       <Grid container spacing={2} className={classes.clientSection}>
         {clientProjectsData.map(project => (
           <Grid item xs={12} key={project.id}>
