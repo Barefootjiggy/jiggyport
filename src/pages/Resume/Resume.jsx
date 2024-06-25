@@ -15,7 +15,7 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
-        <Typography variant="h5" gutterBottom align="center">KEYSTACK PROFICIENCIES</Typography>
+        <Typography variant="h5" gutterBottom align="center">KEY STACK PROFICIENCIES</Typography>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
@@ -50,25 +50,12 @@ function Resume() {
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">Connect 4 - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://connect-4-hazel.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <Typography variant="h6">Cohorty - <a href="https://github.com/Barefootjiggy/cohorty-frontend/tree/dev" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://cohorty-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <Typography variant="body1">
-                JavaScript | HTML, CSS<br />
-                Engage in a strategic battle of wits with a Connect 4 game that allows players to choose from several visual themes.<br />
-                Engineered a responsive game logic in JavaScript, achieving a smooth and error-free playing experience.<br />
-                Customized the user interface with CSS, providing multiple themes that enhance user engagement and visual appeal.
-              </Typography>
-            </Box>
-          </Paper>
-        </Box>
-        <Box mb={3}>
-          <Paper elevation={3}>
-            <Box p={3}>
-              <Typography variant="h6">WOD4U - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://wod4u.netlify.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
-              <Typography variant="body1">
-                JavaScript | MongoDB, Node.js, Express<br />
-                Elevate your fitness journey with WOD4U, an app that offers a comprehensive library of workouts with full customization options.<br />
-                Architected a robust backend in Node.js to manage a large dataset of workouts, ensuring scalability and performance.<br />
-                Implemented a user-friendly interface for creating, updating, and deleting workouts, empowering users to tailor their fitness plans.
+                JavaScript | React, MUI<br />
+                Enhance educational administration with Cohorty, a grading and attendance management app designed for academic staff efficiency.<br />
+                Developed the user interface with React and MUI, providing a streamlined and accessible experience for educators.<br />
+                Implemented features for real-time attendance tracking, grade input and improving data accuracy.
               </Typography>
             </Box>
           </Paper>
@@ -89,12 +76,25 @@ function Resume() {
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">Cohorty - <a href="https://github.com/Barefootjiggy/cohorty-frontend/tree/dev" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://cohorty-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <Typography variant="h6">WOD4U - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://wod4u.netlify.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <Typography variant="body1">
-                JavaScript | React, MUI<br />
-                Enhance educational administration with Cohorty, a grading and attendance management app designed for academic staff efficiency.<br />
-                Developed the user interface with React and MUI, providing a streamlined and accessible experience for educators.<br />
-                Implemented features for real-time attendance tracking, grade input and improving data accuracy.
+                JavaScript | MongoDB, Node.js, Express<br />
+                Elevate your fitness journey with WOD4U, an app that offers a comprehensive library of workouts with full customization options.<br />
+                Architected a robust backend in Node.js to manage a large dataset of workouts, ensuring scalability and performance.<br />
+                Implemented a user-friendly interface for creating, updating, and deleting workouts, empowering users to tailor their fitness plans.
+              </Typography>
+            </Box>
+          </Paper>
+        </Box>
+        <Box mb={3}>
+          <Paper elevation={3}>
+            <Box p={3}>
+              <Typography variant="h6">Connect 4 - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://connect-4-hazel.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <Typography variant="body1">
+                JavaScript | HTML, CSS<br />
+                Engage in a strategic battle of wits with a Connect 4 game that allows players to choose from several visual themes.<br />
+                Engineered a responsive game logic in JavaScript, achieving a smooth and error-free playing experience.<br />
+                Customized the user interface with CSS, providing multiple themes that enhance user engagement and visual appeal.
               </Typography>
             </Box>
           </Paper>
