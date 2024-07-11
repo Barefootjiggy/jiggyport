@@ -33,7 +33,7 @@ const StyledGridItem = styled(Grid)({
 
 const ProfileBox = styled(Box)({
   textAlign: 'center',
-  paddingTop: '100px' /* Add padding to account for NavBar */
+  paddingTop: '50px' 
 });
 
 function Homepage() {
