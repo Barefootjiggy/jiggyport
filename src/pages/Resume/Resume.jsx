@@ -2,7 +2,7 @@ import { Box, Typography, Paper } from '@mui/material';
 
 function Resume() {
   return (
-    <Box p={3}>
+    <Box p={3} style={{ paddingTop: '80px' }}>
       <Typography variant="h4" gutterBottom align="center" style={{ color: '#FFFFFF' }}>Joshua Pierre</Typography>
 
       <Box mb={3}>
