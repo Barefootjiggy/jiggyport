@@ -3,23 +3,19 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#482121', 
+      main: '#ab598b', 
     },
     secondary: {
-      main: '#CEE6F3', 
+      main: '#FF204E', 
     },
   },
   typography: {
     fontFamily: 'Roboto, Arial, sans-serif',
-    allVariants: {
-      color: '#482121',  // Use primary color for all typography variants
-    },
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: `
         body {
-          background-image: url('https://images.pexels.com/photos/2088172/pexels-photo-2088172.jpeg');
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;

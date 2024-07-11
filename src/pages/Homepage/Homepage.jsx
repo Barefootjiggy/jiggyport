@@ -13,7 +13,8 @@ import Nodejs from '../../assets/Nodejs.png';
 import Css from '../../assets/Css.png'; 
 import Html from '../../assets/Html.png'; 
 import Javascript from '../../assets/Javascript.png';
-import Profile from '../../assets/Profile.png';
+// import Profile from '../../assets/Profile.png';
+import Profilenobg from '../../assets/Joshua_Pierrermbg.png'
 
 const StyledAvatar = styled(Avatar)({
   width: 200, 
@@ -23,7 +24,7 @@ const StyledAvatar = styled(Avatar)({
 
 const CenteredTypography = styled(Typography)({
   textAlign: 'center',
-  color: '#482121',
+  color: '#FFFFFF',
   marginBottom: '20px', 
 });
 
@@ -41,7 +42,7 @@ function Homepage() {
       <CenteredTypography variant="h4" component="h1" gutterBottom m= '20px auto'>
         Joshua Pierre
       </CenteredTypography>
-      <StyledAvatar src={Profile} alt="Joshua Pierre" />
+      <StyledAvatar src={Profilenobg} alt="Joshua Pierre" />
       <CenteredTypography variant="h6" component="p" padding=" 0 20px" >
         I am a full stack developer specializing in crafting solutions that harmoniously blend front-end aesthetics with back-end efficiency, delivering intuitive user experiences that users find both accessible and enjoyable. With a background in the healthcare industry creating medical authorizations my role required meticulous adherence to stringent HIPAA guidelines, ensuring the protection of sensitive patient information from unauthorized access and ensuring compliance with legal standards. I excel as a top performer, generating over 300+ authorizations monthly, while upholding stringent compliance and security standards. My experience as a Software Engineer has sharpened my time-management skills, enabling me to meet strict deadlines and deliver on projects. I am driven to continue to apply these skills in a company environment, aiming to become a top contributor.
       </CenteredTypography>
@@ -72,7 +73,7 @@ function createSkillItem(name, imageUrl) {
   return (
     <StyledGridItem item xs={4} md={2} style={{ textAlign: 'center' }}>
       <img src={imageUrl} alt={name} style={{ width: '50px', height: '50px', marginBottom: '10px' }} />
-      <Typography variant="subtitle2" style={{ color: '#482121' }}>{name}</Typography>
+      <Typography variant="subtitle2" style={{ color: '#FFFFFF' }}>{name}</Typography>
     </StyledGridItem>
   );
 }

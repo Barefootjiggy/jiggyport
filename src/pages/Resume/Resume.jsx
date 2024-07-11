@@ -3,7 +3,7 @@ import { Box, Typography, Paper } from '@mui/material';
 function Resume() {
   return (
     <Box p={3}>
-      <Typography variant="h4" gutterBottom align="center">Joshua Pierre</Typography>
+      <Typography variant="h4" gutterBottom align="center" style={{ color: '#FFFFFF' }}>Joshua Pierre</Typography>
 
       <Box mb={3}>
         <Paper elevation={3}>
@@ -15,7 +15,7 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
-        <Typography variant="h5" gutterBottom align="center">KEY STACK PROFICIENCIES</Typography>
+        <Typography variant="h5" gutterBottom align="center" style={{ color: '#FFFFFF' }}>KEY STACK PROFICIENCIES</Typography>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
@@ -29,11 +29,11 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
-        <Typography variant="h5" gutterBottom align="center">CLIENT PROJECTS</Typography>
+        <Typography variant="h5" gutterBottom align="center" style={{ color: '#FFFFFF' }}>CLIENT PROJECTS</Typography>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">Trainwithamandajane - <a href="https://trainwithamandajane.com/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>Trainwithamandajane - <a href="https://trainwithamandajane.com/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <Typography variant="body1">
                 Wordpress | <br />
                 Train with Amanda Jane is a personalized fitness training website that offers a variety of workout plans, nutritional advice, and one-on-one coaching sessions to help clients achieve their fitness goals.<br />
@@ -46,11 +46,11 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
-        <Typography variant="h5" gutterBottom align="center">TECH PROJECTS</Typography>
+        <Typography variant="h5" gutterBottom align="center" style={{ color: '#FFFFFF' }}>TECH PROJECTS</Typography>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">Cohorty - <a href="https://github.com/Barefootjiggy/cohorty-frontend/tree/dev" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://cohorty-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>Cohorty - <a href="https://github.com/Barefootjiggy/cohorty-frontend/tree/dev" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://cohorty-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <Typography variant="body1">
                 JavaScript | React, MUI<br />
                 Enhance educational administration with Cohorty, a grading and attendance management app designed for academic staff efficiency.<br />
@@ -63,7 +63,7 @@ function Resume() {
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">Dutch - <a href="https://github.com/Barefootjiggy/Dutch-Frontend" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://frontend-dutch-by-wahgee.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>Dutch - <a href="https://github.com/Barefootjiggy/Dutch-Frontend" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://frontend-dutch-by-wahgee.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <Typography variant="body1">
                 JavaScript | React, Radix UI<br />
                 A bill-splitting app that simplifies sharing expenses among friends, ensuring everyone pays their fair share.<br />
@@ -76,7 +76,7 @@ function Resume() {
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">WOD4U - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://wod4u.netlify.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>WOD4U - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://wod4u.netlify.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <Typography variant="body1">
                 JavaScript | MongoDB, Node.js, Express<br />
                 Elevate your fitness journey with WOD4U, an app that offers a comprehensive library of workouts with full customization options.<br />
@@ -89,7 +89,7 @@ function Resume() {
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">Connect 4 - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://connect-4-hazel.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>Connect 4 - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://connect-4-hazel.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <Typography variant="body1">
                 JavaScript | HTML, CSS<br />
                 Engage in a strategic battle of wits with a Connect 4 game that allows players to choose from several visual themes.<br />
@@ -102,11 +102,11 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
-        <Typography variant="h5" gutterBottom align="center">EXPERIENCE</Typography>
+        <Typography variant="h5" gutterBottom align="center" style={{ color: '#FFFFFF' }}>EXPERIENCE</Typography>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">General Assembly, Software Engineering Fellow</Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>General Assembly, Software Engineering Fellow</Typography>
               <Typography variant="body1">
                 New York, NY, 03/2024 - 05/2024<br />
                 Intensive training in software engineering concepts and practical applications across a broad range of technologies.<br />
@@ -120,7 +120,7 @@ function Resume() {
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">VNS Health, Authorization Coordinator</Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>VNS Health, Authorization Coordinator</Typography>
               <Typography variant="body1">
                 New York, NY, 04/2018 - 01/2024<br />
                 Managed patient authorizations and supported medical management in a fast-paced healthcare environment.<br />
@@ -134,11 +134,11 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
-        <Typography variant="h5" gutterBottom align="center">EDUCATION</Typography>
+        <Typography variant="h5" gutterBottom align="center" style={{ color: '#FFFFFF' }}>EDUCATION</Typography>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">General Assembly</Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>General Assembly</Typography>
               <Typography variant="body1">
                 In-Person, Certificate Expected: 06/2024<br />
                 Full-stack software engineering 500+ hour program focused on product development fundamentals, object-oriented programming, MVC frameworks, data modeling, and team collaboration strategies.
@@ -149,7 +149,7 @@ function Resume() {
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6">Western New England, B.S.B.A - Management and Leadership</Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>Western New England, B.S.B.A - Management and Leadership</Typography>
               <Typography variant="body1">
                 Springfield, MA, Graduated: 05/2017<br />
                 Active in athletics and community service; Mentor in the United & Mutually Equal Program, Orientation Group Leader for Student Orientation and Registration, volunteer for Red Cross and local community projects.

@@ -3,12 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import MailIcon from '@mui/icons-material/Mail';
 import DescriptionIcon from '@mui/icons-material/Description';
+import { styled } from '@mui/system';
+
+const StyledAppBar = styled(AppBar)`
+  background-color: #ab598b;
+  box-shadow: none;
+`;
 
 function Header() {
   const navigate = useNavigate();
 
   return (
-    <AppBar position="sticky">
+    <StyledAppBar position="sticky" className="navbar">
       <Toolbar>
         <Box display="flex" flexGrow={1} justifyContent="center">
           <Tooltip title="Portfolio">
@@ -40,7 +46,7 @@ function Header() {
           </Tooltip>
         </Box>
       </Toolbar>
-    </AppBar>
+    </StyledAppBar>
   );
 }
 
