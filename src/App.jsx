@@ -6,8 +6,6 @@ import Resume from './pages/Resume/Resume';
 import BackgroundCycler from './components/BackgroundCycler/BackgroundCycler'; 
 import './App.css';
 
-
-
 function App() {
   return (
     <Router>

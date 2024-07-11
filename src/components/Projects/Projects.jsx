@@ -36,6 +36,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
+  button: {
+    padding: '10px 20px',
+    margin: '10px',
+    borderRadius: '5px',
+    boxShadow: '0px 4px 10px rgba(171, 89, 139, 1)',
+  },
 }));
 
 function Projects() {
@@ -68,11 +74,11 @@ function Projects() {
                 </CardContent>
               </CardActionArea>
               <CardActions style={{ justifyContent: 'center' }}>
-                <Button size="small" color="primary" href={project.url} target="_blank" style={{ color: '#ab598b' }}>
+                <Button className={classes.button} href={project.url} target="_blank">
                   Deployed App
                 </Button>
                 {project.githubUrl && (
-                  <Button size="small" color="primary" href={project.githubUrl} target="_blank" style={{ color: '#ab598b' }}>
+                  <Button className={classes.button} href={project.githubUrl} target="_blank">
                     GitHub Link
                   </Button>
                 )}
@@ -106,10 +112,10 @@ function Projects() {
                 </CardContent>
               </CardActionArea>
               <CardActions style={{ justifyContent: 'center' }}>
-                <Button size="small" color="primary" href={project.url} target="_blank" style={{ color: '#ab598b' }}>
+                <Button className={classes.button} href={project.url} target="_blank">
                   Deployed App
                 </Button>
-                <Button size="small" color="primary" href={project.githubUrl} target="_blank" style={{ color: '#ab598b' }}>
+                <Button className={classes.button} href={project.githubUrl} target="_blank">
                   GitHub Link
                 </Button>
               </CardActions>
