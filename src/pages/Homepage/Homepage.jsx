@@ -13,7 +13,6 @@ import Nodejs from '../../assets/Nodejs.png';
 import Css from '../../assets/Css.png'; 
 import Html from '../../assets/Html.png'; 
 import Javascript from '../../assets/Javascript.png';
-// import Profile from '../../assets/Profile.png';
 import Profilenobg from '../../assets/Joshua_Pierrermbg.png'
 
 const StyledAvatar = styled(Avatar)({
@@ -33,7 +32,8 @@ const StyledGridItem = styled(Grid)({
 });
 
 const ProfileBox = styled(Box)({
-  textAlign: 'center'
+  textAlign: 'center',
+  paddingTop: '100px' /* Add padding to account for NavBar */
 });
 
 function Homepage() {
@@ -61,9 +61,6 @@ function Homepage() {
         {createSkillItem("HTML", Html)}
         {createSkillItem("JavaScript", Javascript)}
       </Grid>
-      {/* <CenteredTypography variant="h5" component="h2" gutterBottom m="40px auto">
-        My Projects
-      </CenteredTypography> */}
       <Projects />
     </ProfileBox>
   );

@@ -16,7 +16,8 @@ const StyledAppBar = styled(AppBar)`
 
 const StyledIconButton = styled(IconButton)`
   background-color: #ab598b;
-  margin: 0 10px;
+  margin: 0px 10px;
+  padding: 10px;
   &:hover {
     background-color: #925070;
   }
