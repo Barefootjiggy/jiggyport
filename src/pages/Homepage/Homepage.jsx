@@ -42,7 +42,7 @@ const AnimatedGridItem = ({ name, imageUrl }) => {
 
   return (
     <Grid item xs={4} md={2}
-      onMouseEnter={() => set({ transform: 'scale(1.1)', boxShadow: '0px 4px 8px rgba(0,0,0,0.2)' })}
+      onMouseEnter={() => set({ transform: 'scale(1.2)', boxShadow: '0px 4px 8px rgba(171,89,139,1)' })}
       onMouseLeave={() => set({ transform: 'scale(1)', boxShadow: '0px 0px 0px rgba(0,0,0,0)' })}
     >
       <animated.div style={props}>
