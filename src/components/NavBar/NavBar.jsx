@@ -6,43 +6,55 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import { styled } from '@mui/system';
 
 const StyledAppBar = styled(AppBar)`
-  background-color: #ab598b;
+  background: transparent;
   box-shadow: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+`;
+
+const StyledIconButton = styled(IconButton)`
+  background-color: #ab598b;
+  margin: 0 10px;
+  &:hover {
+    background-color: #925070;
+  }
 `;
 
 function Header() {
   const navigate = useNavigate();
 
   return (
-    <StyledAppBar position="sticky" className="navbar">
+    <StyledAppBar className="navbar">
       <Toolbar>
         <Box display="flex" flexGrow={1} justifyContent="center">
           <Tooltip title="Portfolio">
-            <IconButton
+            <StyledIconButton
               color="inherit"
               aria-label="home"
               onClick={() => navigate('/')}
             >
               <HomeIcon />
-            </IconButton>
+            </StyledIconButton>
           </Tooltip>
           <Tooltip title="Reach out">
-            <IconButton
+            <StyledIconButton
               color="inherit"
               aria-label="email"
               onClick={() => window.location.href = 'mailto:jpgiant@yahoo.com'}
             >
               <MailIcon />
-            </IconButton>
+            </StyledIconButton>
           </Tooltip>
           <Tooltip title="Resume View">
-            <IconButton
+            <StyledIconButton
               color="inherit"
               aria-label="resume"
               onClick={() => navigate('/resume')}
             >
               <DescriptionIcon />
-            </IconButton>
+            </StyledIconButton>
           </Tooltip>
         </Box>
       </Toolbar>

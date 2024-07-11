@@ -4,10 +4,4 @@ body, html {
   overflow: auto; /* Allow body to be scrollable */
 }
 
-.main-content {
-  position: relative;
-  z-index: 1; /* Ensure it is above the background */
-  padding: 20px;
-  min-height: 100vh; /* Ensure it covers the whole viewport height */
-  background: transparent; /* Ensure background is transparent */
-}
+
