@@ -1,4 +1,4 @@
-import { Button, Grid, Paper, Typography, Box, Container } from '@mui/material';
+import { Button, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Box, Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Connect4Image from '../../assets/Classic-Connect4-Mobile2.png';
 import WOD4UImage from '../../assets/WOD4U-Mobile.png';
@@ -18,15 +18,6 @@ const projectsData = [
 ];
 
 const useStyles = makeStyles((theme) => ({
-  projectImage: {
-    maxWidth: '100%',
-    height: '300px',
-    objectFit: 'contain',
-    marginBottom: '10px',
-    [theme.breakpoints.up('sm')]: {
-      maxWidth: '50%',
-    },
-  },
   projectTitle: {
     color: theme.palette.primary.main,
     whiteSpace: 'nowrap',
@@ -35,10 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
   projectDescription: {
     color: theme.palette.primary.main,
-  },
-  projectPaper: {
-    padding: '20px',
-    margin: '10px',
   },
   sectionTitle: {
     margin: '20px 0',
@@ -57,58 +44,76 @@ function Projects() {
   return (
     <Container>
       <Typography variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center', color: '#FFFFFF' }}>CLIENT PROJECTS</Typography>
-      <Grid container spacing={2} className={classes.clientSection}>
+      <Grid container spacing={2} className={classes.clientSection} justifyContent="center">
         {clientProjectsData.map(project => (
-          <Grid item xs={12} key={project.id}>
-            <Paper elevation={3} className={classes.projectPaper}>
-              <Typography variant="h3" className={classes.projectTitle}>{project.title}</Typography>
-              <img src={project.imageUrl} alt={project.title} className={classes.projectImage} />
-              <Typography className={classes.projectDescription}>{project.description}</Typography>
-              <Box display="flex" justifyContent="center" mt={2}>
-                <Button
-                  variant="contained"
-                  onClick={() => window.open(project.url, '_blank')}
-                  style={{ marginRight: '10px' }}
-                >
+          <Grid item xs={12} sm={6} md={4} key={project.id}>
+            <Card style={{ backgroundColor: '#f0f0f0' }}>
+              <CardActionArea href={project.url} target="_blank">
+                <Box p={2}>
+                <CardMedia
+                  component="img"
+                  alt={project.title}
+                  image={project.imageUrl}
+                  title={project.title}
+                  style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} // Adjust the image to fit within the card
+                />
+                </Box>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2" style={{ color: '#ab598b' }}>
+                    {project.title}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    {project.description}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions style={{ justifyContent: 'center' }}>
+                <Button size="small" color="primary" href={project.url} target="_blank" style={{ color: '#ab598b' }}>
                   Deployed App
                 </Button>
                 {project.githubUrl && (
-                  <Button
-                    variant="contained"
-                    onClick={() => window.open(project.githubUrl, '_blank')}
-                  >
+                  <Button size="small" color="primary" href={project.githubUrl} target="_blank" style={{ color: '#ab598b' }}>
                     GitHub Link
                   </Button>
                 )}
-              </Box>
-            </Paper>
+              </CardActions>
+            </Card>
           </Grid>
         ))}
       </Grid>
       <Typography variant="h2" className={classes.sectionTitle} style={{ color: '#FFFFFF' }}>TECH PROJECTS</Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} justifyContent="center">
         {projectsData.map(project => (
-          <Grid item xs={12} key={project.id}>
-            <Paper elevation={3} className={classes.projectPaper}>
-              <Typography variant="h3" className={classes.projectTitle}>{project.title}</Typography>
-              <img src={project.imageUrl} alt={project.title} className={classes.projectImage} />
-              <Typography className={classes.projectDescription}>{project.description}</Typography>
-              <Box display="flex" justifyContent="center" mt={2}>
-                <Button
-                  variant="contained"
-                  onClick={() => window.open(project.url, '_blank')}
-                  style={{ marginRight: '10px' }}
-                >
+          <Grid item xs={12} sm={6} md={4} key={project.id}>
+            <Card style={{ backgroundColor: '#f0f0f0' }}>
+              <CardActionArea href={project.url} target="_blank">
+                <Box p={2}>
+                <CardMedia
+                  component="img"
+                  alt={project.title}
+                  image={project.imageUrl}
+                  title={project.title}
+                  style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} // Adjust the image to fit within the card
+                />
+                </Box>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2" style={{ color: '#ab598b' }}>
+                    {project.title}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    {project.description}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions style={{ justifyContent: 'center' }}>
+                <Button size="small" color="primary" href={project.url} target="_blank" style={{ color: '#ab598b' }}>
                   Deployed App
                 </Button>
-                <Button
-                  variant="contained"
-                  onClick={() => window.open(project.githubUrl, '_blank')}
-                >
+                <Button size="small" color="primary" href={project.githubUrl} target="_blank" style={{ color: '#ab598b' }}>
                   GitHub Link
                 </Button>
-              </Box>
-            </Paper>
+              </CardActions>
+            </Card>
           </Grid>
         ))}
       </Grid>

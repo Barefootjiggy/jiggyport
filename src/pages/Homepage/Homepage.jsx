@@ -1,4 +1,3 @@
-import React from 'react';
 import { Grid, Typography, Avatar, Box, styled } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
 import Projects from '../../components/Projects/Projects';
