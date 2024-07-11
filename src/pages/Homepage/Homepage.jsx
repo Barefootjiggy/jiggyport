@@ -37,7 +37,7 @@ const AnimatedGridItem = ({ name, imageUrl }) => {
   const [props, set] = useSpring(() => ({
     transform: 'scale(1)',
     boxShadow: '0px 0px 0px rgba(0,0,0,0)',
-    config: { tension: 300, friction: 10 }
+    config: { tension: 300, friction: 5 }
   }));
 
   return (
