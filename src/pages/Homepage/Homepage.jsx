@@ -1,4 +1,6 @@
+import React from 'react';
 import { Grid, Typography, Avatar, Box, styled } from '@mui/material';
+import { useSpring, animated } from 'react-spring';
 import Projects from '../../components/Projects/Projects';
 import Django from '../../assets/Django.png'; 
 import Express from '../../assets/Express.png'; 
@@ -13,7 +15,7 @@ import Nodejs from '../../assets/Nodejs.png';
 import Css from '../../assets/Css.png'; 
 import Html from '../../assets/Html.png'; 
 import Javascript from '../../assets/Javascript.png';
-import Profilenobg from '../../assets/Joshua_Pierrermbg.png'
+import Profilenobg from '../../assets/Joshua_Pierrermbg.png';
 
 const StyledAvatar = styled(Avatar)({
   width: 200, 
@@ -27,23 +29,39 @@ const CenteredTypography = styled(Typography)({
   marginBottom: '20px', 
 });
 
-const StyledGridItem = styled(Grid)({
-  textAlign: 'center'
-});
-
 const ProfileBox = styled(Box)({
   textAlign: 'center',
   paddingTop: '80px' 
 });
 
+const AnimatedGridItem = ({ name, imageUrl }) => {
+  const [props, set] = useSpring(() => ({
+    transform: 'scale(1)',
+    boxShadow: '0px 0px 0px rgba(0,0,0,0)',
+    config: { tension: 300, friction: 10 }
+  }));
+
+  return (
+    <Grid item xs={4} md={2}
+      onMouseEnter={() => set({ transform: 'scale(1.1)', boxShadow: '0px 4px 8px rgba(0,0,0,0.2)' })}
+      onMouseLeave={() => set({ transform: 'scale(1)', boxShadow: '0px 0px 0px rgba(0,0,0,0)' })}
+    >
+      <animated.div style={props}>
+        <img src={imageUrl} alt={name} style={{ width: '50px', height: '50px', marginBottom: '10px' }} />
+        <Typography variant="subtitle2" style={{ color: '#FFFFFF' }}>{name}</Typography>
+      </animated.div>
+    </Grid>
+  );
+};
+
 function Homepage() {
   return (
     <ProfileBox>
-      <CenteredTypography variant="h4" component="h1" gutterBottom m= '20px auto'>
+      <CenteredTypography variant="h4" component="h1" gutterBottom m='20px auto'>
         Joshua Pierre
       </CenteredTypography>
       <StyledAvatar src={Profilenobg} alt="Joshua Pierre" />
-      <CenteredTypography variant="h6" component="p" padding=" 0 20px" >
+      <CenteredTypography variant="h6" component="p" padding="0 20px">
         I am a full stack developer specializing in crafting solutions that harmoniously blend front-end aesthetics with back-end efficiency, delivering intuitive user experiences that users find both accessible and enjoyable. With a background in the healthcare industry creating medical authorizations my role required meticulous adherence to stringent HIPAA guidelines, ensuring the protection of sensitive patient information from unauthorized access and ensuring compliance with legal standards. I excel as a top performer, generating over 300+ authorizations monthly, while upholding stringent compliance and security standards. My experience as a Software Engineer has sharpened my time-management skills, enabling me to meet strict deadlines and deliver on projects. I am driven to continue to apply these skills in a company environment, aiming to become a top contributor.
       </CenteredTypography>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
@@ -67,12 +85,7 @@ function Homepage() {
 }
 
 function createSkillItem(name, imageUrl) {
-  return (
-    <StyledGridItem item xs={4} md={2} style={{ textAlign: 'center' }}>
-      <img src={imageUrl} alt={name} style={{ width: '50px', height: '50px', marginBottom: '10px' }} />
-      <Typography variant="subtitle2" style={{ color: '#FFFFFF' }}>{name}</Typography>
-    </StyledGridItem>
-  );
+  return <AnimatedGridItem key={name} name={name} imageUrl={imageUrl} />;
 }
 
 export default Homepage;
