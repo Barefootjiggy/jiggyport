@@ -7,7 +7,7 @@ const HeaderBox = styled(Box)`
 `;
 
 const FadeInText = styled(animated(Typography))`
-  color: #ab598b; /* Set default text color */
+  color: #000000; /* Set default text color */
 `;
 
 const FadeInBox = styled(animated(Box))``;
