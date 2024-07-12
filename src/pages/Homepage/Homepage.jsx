@@ -54,32 +54,40 @@ const AnimatedGridItem = ({ name, imageUrl }) => {
 };
 
 function Homepage() {
+  const slideInProps = useSpring({
+    from: { transform: 'translateX(-100%)' },
+    to: { transform: 'translateX(0)' },
+    config: { tension: 120, friction: 14 }
+  });
+
   return (
-    <ProfileBox>
-      <CenteredTypography variant="h4" component="h1" gutterBottom m='20px auto'>
-        Joshua Pierre
-      </CenteredTypography>
-      <StyledAvatar src={Profilenobg} alt="Joshua Pierre" />
-      <CenteredTypography variant="h6" component="p" padding="0 20px">
-        I am a full stack developer specializing in crafting solutions that harmoniously blend front-end aesthetics with back-end efficiency, delivering intuitive user experiences that users find both accessible and enjoyable. With a background in the healthcare industry creating medical authorizations my role required meticulous adherence to stringent HIPAA guidelines, ensuring the protection of sensitive patient information from unauthorized access and ensuring compliance with legal standards. I excel as a top performer, generating over 300+ authorizations monthly, while upholding stringent compliance and security standards. My experience as a Software Engineer has sharpened my time-management skills, enabling me to meet strict deadlines and deliver on projects. I am driven to continue to apply these skills in a company environment, aiming to become a top contributor.
-      </CenteredTypography>
-      <Grid container spacing={2} alignItems="center" justifyContent="center">
-        {createSkillItem("Django", Django)}
-        {createSkillItem("Express", Express)}
-        {createSkillItem("MongoDB", MongoDB)}
-        {createSkillItem("Mongoose", Mongoose)}
-        {createSkillItem("Material-UI", Mui)}
-        {createSkillItem("PostgreSQL", PostgreSQL)}
-        {createSkillItem("Python", Python)}
-        {createSkillItem("Radix UI", RadixUI)}
-        {createSkillItem("React", ReactLogo)} 
-        {createSkillItem("Node.js", Nodejs)}
-        {createSkillItem("CSS", Css)}
-        {createSkillItem("HTML", Html)}
-        {createSkillItem("JavaScript", Javascript)}
-      </Grid>
-      <Projects />
-    </ProfileBox>
+    <animated.div style={slideInProps}>
+      <ProfileBox>
+        <CenteredTypography variant="h4" component="h1" gutterBottom m='20px auto'>
+          Joshua Pierre
+        </CenteredTypography>
+        <StyledAvatar src={Profilenobg} alt="Joshua Pierre" />
+        <CenteredTypography variant="h6" component="p" padding="0 20px">
+          I am a full stack developer specializing in crafting solutions that harmoniously blend front-end aesthetics with back-end efficiency, delivering intuitive user experiences that users find both accessible and enjoyable. With a background in the healthcare industry creating medical authorizations my role required meticulous adherence to stringent HIPAA guidelines, ensuring the protection of sensitive patient information from unauthorized access and ensuring compliance with legal standards. I excel as a top performer, generating over 300+ authorizations monthly, while upholding stringent compliance and security standards. My experience as a Software Engineer has sharpened my time-management skills, enabling me to meet strict deadlines and deliver on projects. I am driven to continue to apply these skills in a company environment, aiming to become a top contributor.
+        </CenteredTypography>
+        <Grid container spacing={2} alignItems="center" justifyContent="center">
+          {createSkillItem("Django", Django)}
+          {createSkillItem("Express", Express)}
+          {createSkillItem("MongoDB", MongoDB)}
+          {createSkillItem("Mongoose", Mongoose)}
+          {createSkillItem("Material-UI", Mui)}
+          {createSkillItem("PostgreSQL", PostgreSQL)}
+          {createSkillItem("Python", Python)}
+          {createSkillItem("Radix UI", RadixUI)}
+          {createSkillItem("React", ReactLogo)} 
+          {createSkillItem("Node.js", Nodejs)}
+          {createSkillItem("CSS", Css)}
+          {createSkillItem("HTML", Html)}
+          {createSkillItem("JavaScript", Javascript)}
+        </Grid>
+        <Projects />
+      </ProfileBox>
+    </animated.div>
   );
 }
 
