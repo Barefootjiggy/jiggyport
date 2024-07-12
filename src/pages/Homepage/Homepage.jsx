@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Grid, Typography, Avatar, Box, styled } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
 import Projects from '../../components/Projects/Projects';
@@ -20,6 +21,7 @@ const StyledAvatar = styled(Avatar)({
   width: 200, 
   height: 220,
   margin: '20px auto', 
+  cursor: 'pointer'
 });
 
 const CenteredTypography = styled(Typography)({
@@ -60,13 +62,24 @@ function Homepage() {
     config: { tension: 120, friction: 14 }
   });
 
+  const [rotate, setRotate] = useState(false);
   const rotateProps = useSpring({
-    from: { transform: 'rotate(0deg)' },
-    to: { transform: 'rotate(360deg)' },
-    config: { duration: 1000 },
-    reset: true,
-    loop: { reverse: false },
+    transform: rotate ? 'rotate(360deg)' : 'rotate(0deg)',
+    config: { duration: 500 }
   });
+
+  useEffect(() => {
+    // Trigger the initial rotation when the component mounts
+    setRotate(true);
+
+    // Reset the rotation state after the animation completes
+    const timer = setTimeout(() => setRotate(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleAvatarClick = () => {
+    setRotate(!rotate);
+  };
 
   return (
     <animated.div style={slideInProps}>
@@ -75,7 +88,7 @@ function Homepage() {
           Joshua Pierre
         </CenteredTypography>
         <animated.div style={rotateProps}>
-          <StyledAvatar src={Profilenobg} alt="Joshua Pierre" />
+          <StyledAvatar src={Profilenobg} alt="Joshua Pierre" onClick={handleAvatarClick} />
         </animated.div>
         <CenteredTypography variant="h6" component="p" padding="0 20px">
           I am a full stack developer specializing in crafting solutions that harmoniously blend front-end aesthetics with back-end efficiency, delivering intuitive user experiences that users find both accessible and enjoyable. With a background in the healthcare industry creating medical authorizations my role required meticulous adherence to stringent HIPAA guidelines, ensuring the protection of sensitive patient information from unauthorized access and ensuring compliance with legal standards. I excel as a top performer, generating over 300+ authorizations monthly, while upholding stringent compliance and security standards. My experience as a Software Engineer has sharpened my time-management skills, enabling me to meet strict deadlines and deliver on projects. I am driven to continue to apply these skills in a company environment, aiming to become a top contributor.
