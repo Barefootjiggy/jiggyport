@@ -1,8 +1,11 @@
+import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, Box, Tooltip } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import MailIcon from '@mui/icons-material/Mail';
 import DescriptionIcon from '@mui/icons-material/Description';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { styled } from '@mui/system';
 
 const StyledAppBar = styled(AppBar)`
@@ -23,8 +26,19 @@ const StyledIconButton = styled(IconButton)`
   }
 `;
 
-function Header() {
+const ToggleButton = styled(IconButton)`
+  margin-left: auto; /* Pushes the button to the right */
+  color: #fff;
+`;
+
+function Header({ onToggleBackground }) {
   const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(false);
+
+  const handleToggle = () => {
+    setDarkMode(!darkMode);
+    onToggleBackground();
+  };
 
   return (
     <StyledAppBar className="navbar">
@@ -58,6 +72,9 @@ function Header() {
             </StyledIconButton>
           </Tooltip>
         </Box>
+        <ToggleButton onClick={handleToggle}>
+          {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+        </ToggleButton>
       </Toolbar>
     </StyledAppBar>
   );

@@ -39,7 +39,7 @@ function Footer() {
   };
 
   return (
-    <StyledFooter position="sticky" style={{ top: 'auto', bottom: 0 }} className="footer">
+    <StyledFooter position="sticky" style={{ top: 'auto', bottom: 0, marginTop: '80px' }} className="footer">
       <Toolbar style={{ justifyContent: 'center' }}>
         <BottomNavigation
           value={value}

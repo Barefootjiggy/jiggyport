@@ -6,7 +6,7 @@ const moveBackground = keyframes`
     background-position: 0 0;
   }
   100% {
-    background-position: 0 -3000px; /* Adjust based on the height of your image */
+    background-position: 0 -3000px; 
   }
 `;
 
@@ -16,15 +16,17 @@ const AnimatedBackground = styled('div')`
   position: fixed;
   top: 0;
   left: 0;
-  background-image: url('/deepsky.jpg'); /* Update the path to your image */
+  background-image: url(${props => props.bgImage}); 
   background-size: cover;
   background-repeat: repeat-y; 
   animation: ${moveBackground} 60s linear infinite;
-  z-index: -1; /* Ensure it is behind other elements */
+  z-index: -1; 
 `;
 
-function BackgroundCycler() {
-  return <AnimatedBackground />;
+function BackgroundCycler({ bgImage }) {
+  return (
+    <AnimatedBackground bgImage={bgImage} />
+  );
 }
 
 export default BackgroundCycler;
