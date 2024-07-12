@@ -55,6 +55,11 @@ const AnimatedGridItem = ({ name, imageUrl }) => {
   );
 };
 
+const FlickerText = styled(animated(Typography))({
+  textAlign: 'center',
+  marginBottom: '20px',
+});
+
 function Homepage() {
   const slideInProps = useSpring({
     from: { transform: 'translateX(-100%)' },
@@ -81,12 +86,24 @@ function Homepage() {
     setRotate(!rotate);
   };
 
+  const flickerProps = useSpring({
+    from: { color: '#FFFFFF' },
+    to: async (next) => {
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        await next({ color: '#ed3804' });
+        await next({ color: '#FFFFFF' });
+      }
+    },
+    config: { duration: 500 }, // Adjust the duration for the flickering effect
+  });
+
   return (
     <animated.div style={slideInProps}>
       <ProfileBox>
-        <CenteredTypography variant="h4" component="h1" gutterBottom m='20px auto'>
+        <FlickerText variant="h4" component="h1" style={flickerProps}>
           Joshua Pierre
-        </CenteredTypography>
+        </FlickerText>
         <animated.div style={rotateProps}>
           <StyledAvatar src={Profilenobg} alt="Joshua Pierre" onClick={handleAvatarClick} />
         </animated.div>
