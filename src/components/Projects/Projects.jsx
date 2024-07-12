@@ -1,5 +1,7 @@
 import { Button, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Box, Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { useSpring, animated } from 'react-spring';
+import { styled } from '@mui/system';
 import Connect4Image from '../../assets/Classic-Connect4-Mobile2.png';
 import WOD4UImage from '../../assets/WOD4U-Mobile.png';
 import DutchImage from '../../assets/Dutch-Mobile.png';
@@ -44,25 +46,46 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const FlickerText = styled(animated(Typography))({
+  textAlign: 'center',
+  marginBottom: '20px',
+});
+
 function Projects() {
   const classes = useStyles();
 
+  const flickerPropsClient = useSpring({
+    from: { color: '#FFFFFF' },
+    to: { color: '#ed3804' },
+    config: { duration: 500 },
+    loop: { reverse: true },
+  });
+
+  const flickerPropsTech = useSpring({
+    from: { color: '#FFFFFF' },
+    to: { color: '#ed3804' },
+    config: { duration: 500 },
+    loop: { reverse: true },
+  });
+
   return (
     <Container>
-      <Typography variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center', color: '#FFFFFF', margin: '20px' }}>CLIENT PROJECTS</Typography>
+      <FlickerText variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...flickerPropsClient }}>
+        CLIENT PROJECTS
+      </FlickerText>
       <Grid container spacing={2} className={classes.clientSection} justifyContent="center">
         {clientProjectsData.map(project => (
           <Grid item xs={12} sm={6} md={4} key={project.id}>
             <Card style={{ backgroundColor: '#f0f0f0' }}>
               <CardActionArea href={project.url} target="_blank">
                 <Box p={2}>
-                <CardMedia
-                  component="img"
-                  alt={project.title}
-                  image={project.imageUrl}
-                  title={project.title}
-                  style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} // Adjust the image to fit within the card
-                />
+                  <CardMedia
+                    component="img"
+                    alt={project.title}
+                    image={project.imageUrl}
+                    title={project.title}
+                    style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} // Adjust the image to fit within the card
+                  />
                 </Box>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2" style={{ color: '#ab598b' }}>
@@ -87,20 +110,22 @@ function Projects() {
           </Grid>
         ))}
       </Grid>
-      <Typography variant="h2" className={classes.sectionTitle} style={{ color: '#FFFFFF', margin: '20px' }}>TECH PROJECTS</Typography>
+      <FlickerText variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...flickerPropsTech }}>
+        TECH PROJECTS
+      </FlickerText>
       <Grid container spacing={2} justifyContent="center">
         {projectsData.map(project => (
           <Grid item xs={12} sm={6} md={4} key={project.id}>
             <Card style={{ backgroundColor: '#f0f0f0' }}>
               <CardActionArea href={project.url} target="_blank">
                 <Box p={2}>
-                <CardMedia
-                  component="img"
-                  alt={project.title}
-                  image={project.imageUrl}
-                  title={project.title}
-                  style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} // Adjust the image to fit within the card
-                />
+                  <CardMedia
+                    component="img"
+                    alt={project.title}
+                    image={project.imageUrl}
+                    title={project.title}
+                    style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} // Adjust the image to fit within the card
+                  />
                 </Box>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2" style={{ color: '#ab598b' }}>
