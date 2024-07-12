@@ -24,18 +24,18 @@ const StyledAvatar = styled(Avatar)({
   cursor: 'pointer'
 });
 
-const CenteredTypography = styled(Typography)({
+const CenteredTypography = styled(Typography)(({ bgImage }) => ({
   textAlign: 'center',
-  color: '#ffffff',
-  marginBottom: '20px', 
-});
+  color: bgImage === '/mountainsky.jpg' ? '#000000' : '#ffffff',
+  marginBottom: '20px',
+}));
 
 const ProfileBox = styled(Box)({
   textAlign: 'center',
   paddingTop: '100px' 
 });
 
-const AnimatedGridItem = ({ name, imageUrl }) => {
+const AnimatedGridItem = ({ name, imageUrl, bgImage }) => {
   const [props, set] = useSpring(() => ({
     transform: 'scale(1)',
     boxShadow: '0px 0px 0px rgba(0,0,0,0)',
@@ -49,7 +49,7 @@ const AnimatedGridItem = ({ name, imageUrl }) => {
     >
       <animated.div style={props}>
         <img src={imageUrl} alt={name} style={{ width: '50px', height: '50px', marginBottom: '10px' }} />
-        <Typography variant="subtitle2" style={{ color: '#ffffff' }}>{name}</Typography>
+        <Typography variant="subtitle2" style={{ color: bgImage === '/mountainsky.jpg' ? '#000000' : '#ffffff' }}>{name}</Typography>
       </animated.div>
     </Grid>
   );
@@ -60,7 +60,7 @@ const FlickerText = styled(animated(Typography))({
   marginBottom: '20px',
 });
 
-function Homepage() {
+function Homepage({ bgImage }) {
   const slideInProps = useSpring({
     from: { transform: 'translateX(-100%)' },
     to: { transform: 'translateX(0)' },
@@ -89,7 +89,7 @@ function Homepage() {
     to: async (next) => {
       // eslint-disable-next-line no-constant-condition
       while (true) {
-        await next({ color: '#ed3804' });
+        await next({ color: '#ab598b' });
         await next({ color: '#ffffff' });
       }
     },
@@ -105,32 +105,32 @@ function Homepage() {
         <animated.div style={rotateProps}>
           <StyledAvatar src={Profilenobg} alt="Joshua Pierre" onClick={handleAvatarClick} />
         </animated.div>
-        <CenteredTypography variant="h6" component="p" padding="0 20px">
+        <CenteredTypography variant="h6" component="p" padding="0 20px" bgImage={bgImage}>
           I am a full stack developer specializing in crafting solutions that harmoniously blend front-end aesthetics with back-end efficiency, delivering intuitive user experiences that users find both accessible and enjoyable. With a background in the healthcare industry creating medical authorizations my role required meticulous adherence to stringent HIPAA guidelines, ensuring the protection of sensitive patient information from unauthorized access and ensuring compliance with legal standards. I excel as a top performer, generating over 300+ authorizations monthly, while upholding stringent compliance and security standards. My experience as a Software Engineer has sharpened my time-management skills, enabling me to meet strict deadlines and deliver on projects. I am driven to continue to apply these skills in a company environment, aiming to become a top contributor.
         </CenteredTypography>
         <Grid container spacing={2} alignItems="center" justifyContent="center">
-          {createSkillItem("Django", Django)}
-          {createSkillItem("Express", Express)}
-          {createSkillItem("MongoDB", MongoDB)}
-          {createSkillItem("Mongoose", Mongoose)}
-          {createSkillItem("Material-UI", Mui)}
-          {createSkillItem("PostgreSQL", PostgreSQL)}
-          {createSkillItem("Python", Python)}
-          {createSkillItem("Radix UI", RadixUI)}
-          {createSkillItem("React", ReactLogo)} 
-          {createSkillItem("Node.js", Nodejs)}
-          {createSkillItem("CSS", Css)}
-          {createSkillItem("HTML", Html)}
-          {createSkillItem("JavaScript", Javascript)}
+          {createSkillItem("Django", Django, bgImage)}
+          {createSkillItem("Express", Express, bgImage)}
+          {createSkillItem("MongoDB", MongoDB, bgImage)}
+          {createSkillItem("Mongoose", Mongoose, bgImage)}
+          {createSkillItem("Material-UI", Mui, bgImage)}
+          {createSkillItem("PostgreSQL", PostgreSQL, bgImage)}
+          {createSkillItem("Python", Python, bgImage)}
+          {createSkillItem("Radix UI", RadixUI, bgImage)}
+          {createSkillItem("React", ReactLogo, bgImage)} 
+          {createSkillItem("Node.js", Nodejs, bgImage)}
+          {createSkillItem("CSS", Css, bgImage)}
+          {createSkillItem("HTML", Html, bgImage)}
+          {createSkillItem("JavaScript", Javascript, bgImage)}
         </Grid>
-        <Projects />
+        <Projects bgImage={bgImage} />
       </ProfileBox>
     </animated.div>
   );
 }
 
-function createSkillItem(name, imageUrl) {
-  return <AnimatedGridItem key={name} name={name} imageUrl={imageUrl} />;
+function createSkillItem(name, imageUrl, bgImage) {
+  return <AnimatedGridItem key={name} name={name} imageUrl={imageUrl} bgImage={bgImage} />;
 }
 
 export default Homepage;

@@ -11,7 +11,7 @@ function App() {
 
   const handleToggleBackground = () => {
     setBgImage(prevImage =>
-      prevImage === '/deepsky.jpg' ? '/redorangesolarflare.jpg' : '/deepsky.jpg'
+      prevImage === '/deepsky.jpg' ? '/mountainsky.jpg' : '/deepsky.jpg'
     );
   };
 
@@ -21,8 +21,8 @@ function App() {
       <BackgroundCycler bgImage={bgImage} />
       <NavBar onToggleBackground={handleToggleBackground} />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route path="/" element={<HomePage bgImage={bgImage} />} />
+          <Route path="/resume" element={<Resume bgImage={bgImage} />} />
         </Routes>
       <Footer />
     </Router>
