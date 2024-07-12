@@ -63,7 +63,7 @@ function Homepage() {
   const rotateProps = useSpring({
     from: { transform: 'rotate(0deg)' },
     to: { transform: 'rotate(360deg)' },
-    config: { duration: 3000 },
+    config: { duration: 1000 },
     reset: true,
     loop: { reverse: false },
   });
