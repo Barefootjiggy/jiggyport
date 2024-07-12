@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Box, Tooltip } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Tooltip } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import MailIcon from '@mui/icons-material/Mail';
@@ -27,7 +27,9 @@ const StyledIconButton = styled(IconButton)`
 `;
 
 const ToggleButton = styled(IconButton)`
-  margin-left: auto; /* Pushes the button to the right */
+  position: absolute;
+  top: 8px;
+  right: 8px;
   color: #fff;
 `;
 
@@ -42,36 +44,34 @@ function Header({ onToggleBackground }) {
 
   return (
     <StyledAppBar className="navbar" style={{ marginTop: '20px' }}>
-      <Toolbar>
-        <Box display="flex" flexGrow={1} justifyContent="center">
-          <Tooltip title="Portfolio">
-            <StyledIconButton
-              color="inherit"
-              aria-label="home"
-              onClick={() => navigate('/')}
-            >
-              <HomeIcon />
-            </StyledIconButton>
-          </Tooltip>
-          <Tooltip title="Reach out">
-            <StyledIconButton
-              color="inherit"
-              aria-label="email"
-              onClick={() => window.location.href = 'mailto:jpgiant@yahoo.com'}
-            >
-              <MailIcon />
-            </StyledIconButton>
-          </Tooltip>
-          <Tooltip title="Resume View">
-            <StyledIconButton
-              color="inherit"
-              aria-label="resume"
-              onClick={() => navigate('/resume')}
-            >
-              <DescriptionIcon />
-            </StyledIconButton>
-          </Tooltip>
-        </Box>
+      <Toolbar style={{ justifyContent: 'center' }}>
+        <Tooltip title="Portfolio">
+          <StyledIconButton
+            color="inherit"
+            aria-label="home"
+            onClick={() => navigate('/')}
+          >
+            <HomeIcon />
+          </StyledIconButton>
+        </Tooltip>
+        <Tooltip title="Reach out">
+          <StyledIconButton
+            color="inherit"
+            aria-label="email"
+            onClick={() => window.location.href = 'mailto:jpgiant@yahoo.com'}
+          >
+            <MailIcon />
+          </StyledIconButton>
+        </Tooltip>
+        <Tooltip title="Resume View">
+          <StyledIconButton
+            color="inherit"
+            aria-label="resume"
+            onClick={() => navigate('/resume')}
+          >
+            <DescriptionIcon />
+          </StyledIconButton>
+        </Tooltip>
         <ToggleButton onClick={handleToggle}>
           {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
         </ToggleButton>
