@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AppBar, Toolbar, IconButton, Box, Tooltip } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
@@ -41,7 +41,7 @@ function Header({ onToggleBackground }) {
   };
 
   return (
-    <StyledAppBar className="navbar">
+    <StyledAppBar className="navbar" style={{ marginTop: '20px' }}>
       <Toolbar>
         <Box display="flex" flexGrow={1} justifyContent="center">
           <Tooltip title="Portfolio">

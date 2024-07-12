@@ -32,7 +32,7 @@ const CenteredTypography = styled(Typography)({
 
 const ProfileBox = styled(Box)({
   textAlign: 'center',
-  paddingTop: '80px' 
+  paddingTop: '100px' 
 });
 
 const AnimatedGridItem = ({ name, imageUrl }) => {
