@@ -26,7 +26,7 @@ const StyledAvatar = styled(Avatar)({
 
 const CenteredTypography = styled(Typography)({
   textAlign: 'center',
-  color: '#FFFFFF',
+  color: '#ffffff',
   marginBottom: '20px', 
 });
 
@@ -49,7 +49,7 @@ const AnimatedGridItem = ({ name, imageUrl }) => {
     >
       <animated.div style={props}>
         <img src={imageUrl} alt={name} style={{ width: '50px', height: '50px', marginBottom: '10px' }} />
-        <Typography variant="subtitle2" style={{ color: '#FFFFFF' }}>{name}</Typography>
+        <Typography variant="subtitle2" style={{ color: '#ffffff' }}>{name}</Typography>
       </animated.div>
     </Grid>
   );
@@ -74,10 +74,8 @@ function Homepage() {
   });
 
   useEffect(() => {
-    // Trigger the initial rotation when the component mounts
     setRotate(true);
 
-    // Reset the rotation state after the animation completes
     const timer = setTimeout(() => setRotate(false), 1000);
     return () => clearTimeout(timer);
   }, []);
@@ -87,15 +85,15 @@ function Homepage() {
   };
 
   const flickerProps = useSpring({
-    from: { color: '#FFFFFF' },
+    from: { color: '#ffffff' },
     to: async (next) => {
       // eslint-disable-next-line no-constant-condition
       while (true) {
         await next({ color: '#ed3804' });
-        await next({ color: '#FFFFFF' });
+        await next({ color: '#ffffff' });
       }
     },
-    config: { duration: 500 }, // Adjust the duration for the flickering effect
+    config: { duration: 500 }, 
   });
 
   return (

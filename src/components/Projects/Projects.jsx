@@ -55,14 +55,14 @@ function Projects() {
   const classes = useStyles();
 
   const flickerPropsClient = useSpring({
-    from: { color: '#FFFFFF' },
+    from: { color: '#ffffff' },
     to: { color: '#ed3804' },
     config: { duration: 500 },
     loop: { reverse: true },
   });
 
   const flickerPropsTech = useSpring({
-    from: { color: '#FFFFFF' },
+    from: { color: '#ffffff' },
     to: { color: '#ed3804' },
     config: { duration: 500 },
     loop: { reverse: true },
@@ -84,7 +84,7 @@ function Projects() {
                     alt={project.title}
                     image={project.imageUrl}
                     title={project.title}
-                    style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} // Adjust the image to fit within the card
+                    style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} 
                   />
                 </Box>
                 <CardContent>
@@ -124,7 +124,7 @@ function Projects() {
                     alt={project.title}
                     image={project.imageUrl}
                     title={project.title}
-                    style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} // Adjust the image to fit within the card
+                    style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} 
                   />
                 </Box>
                 <CardContent>

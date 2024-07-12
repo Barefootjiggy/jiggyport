@@ -7,7 +7,7 @@ const HeaderBox = styled(Box)`
 `;
 
 const FadeInText = styled(animated(Typography))`
-  color: #000000; /* Set default text color */
+  color: #000000;
 `;
 
 const FadeInBox = styled(animated(Box))``;
@@ -22,18 +22,18 @@ function Resume() {
   return (
     <FadeInBox p={3} style={{ paddingTop: '80px', ...fadeProps }}>
       <HeaderBox style={{ marginTop: '20px' }}>
-        <Typography variant="h4" gutterBottom style={{ color: '#FFFFFF' }}>Joshua Pierre</Typography>
-        <Typography variant="h6" gutterBottom style={{ color: '#FFFFFF' }}>Full Stack Developer</Typography>
-        <Typography variant="body1" gutterBottom style={{ color: '#FFFFFF' }}>
+        <Typography variant="h4" gutterBottom style={{ color: '#ffffff' }}>Joshua Pierre</Typography>
+        <Typography variant="h6" gutterBottom style={{ color: '#ffffff' }}>Full Stack Developer</Typography>
+        <Typography variant="body1" gutterBottom style={{ color: '#ffffff' }}>
           Passionate about creating solutions that blend front-end aesthetics with back-end efficiency. Experienced in developing web applications and ensuring the protection of sensitive information in compliance with industry standards.
         </Typography>
-        <Typography variant="body2" style={{ color: '#FFFFFF' }}>
+        <Typography variant="body2" style={{ color: '#ffffff' }}>
           Location: Brooklyn, NY | Contact: 570-540-6871 | Email: jpgiant@yahoo.com
         </Typography>
       </HeaderBox>
 
       <Box mt={3} mb={3}>
-        <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: '#FFFFFF' }}>KEY STACK PROFICIENCIES</FadeInText>
+        <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: '#ffffff' }}>KEY STACK PROFICIENCIES</FadeInText>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
@@ -47,7 +47,7 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
-        <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: '#FFFFFF' }}>CLIENT PROJECTS</FadeInText>
+        <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: '#ffffff' }}>CLIENT PROJECTS</FadeInText>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
@@ -64,7 +64,7 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
-        <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: '#FFFFFF' }}>TECH PROJECTS</FadeInText>
+        <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: '#ffffff' }}>TECH PROJECTS</FadeInText>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
@@ -120,7 +120,7 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
-        <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: '#FFFFFF' }}>EXPERIENCE</FadeInText>
+        <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: '#ffffff' }}>EXPERIENCE</FadeInText>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
@@ -152,7 +152,7 @@ function Resume() {
       </Box>
 
       <Box mt={3} mb={3}>
-        <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: '#FFFFFF' }}>EDUCATION</FadeInText>
+        <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: '#ffffff' }}>EDUCATION</FadeInText>
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>

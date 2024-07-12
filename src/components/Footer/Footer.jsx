@@ -13,7 +13,7 @@ const StyledFooter = styled(AppBar)`
 function Footer() {
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setValue(newValue);
     switch (newValue) {
       case 0: {
@@ -43,26 +43,26 @@ function Footer() {
       <Toolbar style={{ justifyContent: 'center' }}>
         <BottomNavigation
           value={value}
-          onChange={handleChange}
+          onChange={(event, newValue) => handleChange(newValue)}
           showLabels
           style={{ background: 'transparent' }}
         >
           <BottomNavigationAction 
             label="" 
             icon={<GitHubIcon style={{ color: 'white' }} />} 
-            onClick={() => handleChange(null, 0)}
+            onClick={() => handleChange(0)}
           />
           <Tooltip title="Resume Download" arrow>
             <BottomNavigationAction 
               label="" 
               icon={<PictureAsPdfIcon style={{ color: 'white' }} />} 
-              onClick={() => handleChange(null, 1)}
+              onClick={() => handleChange(1)}
             />
           </Tooltip>
           <BottomNavigationAction 
             label="" 
             icon={<LinkedInIcon style={{ color: 'white' }} />} 
-            onClick={() => handleChange(null, 2)}
+            onClick={() => handleChange(2)}
           />
         </BottomNavigation>
       </Toolbar>
