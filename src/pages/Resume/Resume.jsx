@@ -8,7 +8,7 @@ const HeaderBox = styled(Box)`
 function Resume() {
   return (
     <Box p={3} style={{ paddingTop: '80px' }}>
-      <HeaderBox>
+      <HeaderBox style={{ marginTop: '20px' }} >
         <Typography variant="h4" gutterBottom style={{ color: '#FFFFFF' }}>Joshua Pierre</Typography>
         <Typography variant="h6" gutterBottom style={{ color: '#FFFFFF' }}>Full Stack Developer</Typography>
         <Typography variant="body1" gutterBottom style={{ color: '#FFFFFF' }}>

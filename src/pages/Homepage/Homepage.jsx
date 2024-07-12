@@ -101,7 +101,7 @@ function Homepage() {
   return (
     <animated.div style={slideInProps}>
       <ProfileBox>
-        <FlickerText variant="h4" component="h1" style={flickerProps}>
+        <FlickerText variant="h2" component="h1" style={flickerProps}>
           Joshua Pierre
         </FlickerText>
         <animated.div style={rotateProps}>
