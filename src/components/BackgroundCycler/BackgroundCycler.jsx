@@ -1,17 +1,15 @@
 import { keyframes } from '@mui/system';
 import { styled } from '@mui/system';
 
-// Keyframes for moving the background upwards
 const moveBackground = keyframes`
-  from {
+  0% {
     background-position: 0 0;
   }
-  to {
+  100% {
     background-position: 0 -3000px; /* Adjust based on the height of your image */
   }
 `;
 
-// Styled component for the body to apply the animation
 const AnimatedBackground = styled('div')`
   height: 100%;
   width: 100%;
