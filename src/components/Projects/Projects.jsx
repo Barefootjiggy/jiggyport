@@ -76,7 +76,7 @@ function Projects() {
       <Grid container spacing={2} className={classes.clientSection} justifyContent="center">
         {clientProjectsData.map(project => (
           <Grid item xs={12} sm={6} md={4} key={project.id}>
-            <Card style={{ backgroundColor: '#f0f0f0' }}>
+            <Card style={{ backgroundColor: 'transparent' }}>
               <CardActionArea href={project.url} target="_blank">
                 <Box p={2}>
                   <CardMedia
@@ -91,7 +91,7 @@ function Projects() {
                   <Typography gutterBottom variant="h5" component="h2" style={{ color: '#ab598b' }}>
                     {project.title}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
+                  <Typography variant="body2" color="#ffffff" component="p">
                     {project.description}
                   </Typography>
                 </CardContent>
@@ -116,7 +116,7 @@ function Projects() {
       <Grid container spacing={2} justifyContent="center">
         {projectsData.map(project => (
           <Grid item xs={12} sm={6} md={4} key={project.id}>
-            <Card style={{ backgroundColor: '#f0f0f0' }}>
+            <Card style={{ backgroundColor: 'transparent' }}>
               <CardActionArea href={project.url} target="_blank">
                 <Box p={2}>
                   <CardMedia
@@ -131,7 +131,7 @@ function Projects() {
                   <Typography gutterBottom variant="h5" component="h2" style={{ color: '#ab598b' }}>
                     {project.title}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
+                  <Typography variant="body2" color="#ffffff" component="p">
                     {project.description}
                   </Typography>
                 </CardContent>
