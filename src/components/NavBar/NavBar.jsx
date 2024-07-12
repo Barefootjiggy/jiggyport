@@ -14,7 +14,7 @@ const StyledAppBar = styled(AppBar)`
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensure it stays on top of other elements */
+  z-index: 1000; 
 `;
 
 const StyledIconButton = styled(IconButton)`
@@ -28,7 +28,6 @@ const StyledIconButton = styled(IconButton)`
 
 const ToggleButton = styled(IconButton)`
   position: absolute;
-  top: 8px;
   right: 8px;
   color: #fff;
 `;
