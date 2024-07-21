@@ -84,7 +84,7 @@ function Homepage({ bgImage }) {
     setRotate(!rotate);
   };
 
-  const flickerProps = useSpring({
+  const smoothTransitionProps = useSpring({
     from: { color: '#ffffff' },
     to: async (next) => {
       // eslint-disable-next-line no-constant-condition
@@ -93,13 +93,13 @@ function Homepage({ bgImage }) {
         await next({ color: '#ffffff' });
       }
     },
-    config: { duration: 500 }, 
+    config: { duration: 5000, easing: t => t * t * (3 - 2 * t) }, 
   });
 
   return (
     <animated.div style={slideInProps}>
       <ProfileBox>
-        <FlickerText variant="h2" component="h1" style={flickerProps}>
+        <FlickerText variant="h2" component="h1" style={smoothTransitionProps}>
           Joshua Pierre
         </FlickerText>
         <animated.div style={rotateProps}>
