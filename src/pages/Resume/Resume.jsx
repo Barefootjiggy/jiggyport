@@ -58,8 +58,13 @@ function Resume({ bgImage }) {
               <FadeInText variant="body1" style={fadeProps}>
                 Wordpress | <br />
                 Train with Amanda Jane is a personalized fitness training website that offers a variety of workout plans, nutritional advice, and one-on-one coaching sessions to help clients achieve their fitness goals.<br />
-                Designed and developed with wordpress ensuring a user-friendly interface.<br />
-                Implemented a responsive design to provide a seamless experience across different devices.
+                <strong>Website Development</strong>: Designed and developed a comprehensive fitness training website using WordPress, providing personalized workout plans, nutritional advice, and coaching sessions.<br />
+                <strong>User Interface Design</strong>: Created a user-friendly and visually appealing interface to enhance user engagement and improve overall user experience.<br />
+                <strong>Responsive Design</strong>: Implemented a fully responsive design to ensure seamless usability across various devices, including desktops, tablets, and smartphones.<br />
+                <strong>Content Management</strong>: Utilized WordPress's content management system to organize and manage various types of content, including blog posts, workout plans, and nutritional guides.<br />
+                <strong>SEO Optimization</strong>: Applied SEO best practices to improve search engine rankings, increase website traffic, and attract more clients.<br />
+                <strong>Customization</strong>: Customized themes and plugins to meet specific project requirements and enhance website functionality.<br />
+                <strong>Client Collaboration</strong>: Worked closely with the client to understand their vision and requirements, delivering a tailored solution that aligns with their fitness training business goals.<br />
               </FadeInText>
             </Box>
           </Paper>
@@ -74,9 +79,17 @@ function Resume({ bgImage }) {
               <Typography variant="h6" style={{ color: '#ab598b' }}>Cohorty - <a href="https://github.com/Barefootjiggy/cohorty-frontend/tree/dev" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://cohorty-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <FadeInText variant="body1" style={fadeProps}>
                 JavaScript | React, MUI<br />
-                Enhance educational administration with Cohorty, a grading and attendance management app designed for academic staff efficiency.<br />
-                Developed the user interface with React and MUI, providing a streamlined and accessible experience for educators.<br />
-                Implemented features for real-time attendance tracking, grade input and improving data accuracy.
+                <strong>Front-End Development</strong>: Played a crucial role as a front-end developer in a team of four, creating a web application to manage courses, students, and assignments using React and Material UI.<br />
+                <strong>Component Design</strong>: Developed reusable components ensuring a modular and maintainable codebase.<br />
+                <strong>Routing and Navigation</strong>: Implemented dynamic routing and navigation using React Router, enhancing user experience by providing seamless transitions between different sections of the app.<br />
+                <strong>Authentication</strong>: Set up authentication and authorization using context and custom components, ensuring secure access to protected routes.
+                <br />
+                <strong>State Management</strong>: Managed application state effectively with React hooks and context, enabling real-time updates and synchronization across the app.
+                <br />
+                <strong>API Integration</strong>: Utilized Axios to integrate with backend APIs, handling data fetching, updating, and deletion operations efficiently.
+                <br />
+                <strong>User Interface</strong>: Designed a user-friendly interface with Material UI implementing images from Pexels, improving the usability and aesthetic appeal of the application.
+                <br />
               </FadeInText>
             </Box>
           </Paper>
@@ -88,8 +101,20 @@ function Resume({ bgImage }) {
               <FadeInText variant="body1" style={fadeProps}>
                 JavaScript | React, Radix UI<br />
                 A bill-splitting app that simplifies sharing expenses among friends, ensuring everyone pays their fair share.<br />
-                Crafted the front-end using React and Radix UI, creating a responsive and intuitive user interface.<br />
-                Collaborated on API integration to manage transactions, facilitating smooth and accurate financial interactions.
+                <strong>Front-End Development</strong>: Collaborated as a key front-end developer on a team of four, building the Dutch app to simplify shared expense management using React.js and Radix UI.
+                <br />
+                <strong>Component Design</strong>: Developed and maintained reusable components enhancing code modularity and maintainability.
+                <br />
+                <strong>Routing Implementation</strong>: Managed app routing with React Router, ensuring seamless navigation between pages.
+                <br />
+                <strong>API Integration</strong>: Utilized Axios for efficient communication with backend APIs, handling data fetching, submission, and real-time updates.
+                <br />
+                <strong>User Interface</strong>: Leveraged Radix UI for creating accessible and user-friendly interfaces, improving user experience.
+                <br />
+                <strong>Testing and Debugging</strong>: Used Postman for API testing and debugging, ensuring robust and error-free backend integration.
+                <br />
+                <strong>Version Control</strong>: Collaborated using Git and GitHub, maintaining version control and managing code reviews effectively.
+                <br />
               </FadeInText>
             </Box>
           </Paper>
@@ -101,8 +126,18 @@ function Resume({ bgImage }) {
               <FadeInText variant="body1" style={fadeProps}>
                 JavaScript | MongoDB, Node.js, Express<br />
                 Elevate your fitness journey with WOD4U, an app that offers a comprehensive library of workouts with full customization options.<br />
-                Architected a robust backend in Node.js to manage a large dataset of workouts, ensuring scalability and performance.<br />
-                Implemented a user-friendly interface for creating, updating, and deleting workouts, empowering users to tailor their fitness plans.
+                <strong>Full-Stack Development</strong>: Built a comprehensive fitness application using JavaScript, HTML, CSS, and MongoDB, showcasing proficiency in both front-end and back-end technologies.
+                <br />
+                <strong>Backend Integration</strong>: Developed robust server-side logic with Express.js and MongoDB, implementing secure authentication and authorization mechanisms, including password hashing and token management.
+                <br />
+                <strong>User Interface</strong>: Created a responsive and interactive front-end interface, including forms for user registration, login, and workout management, enhancing user experience and engagement.
+                <br />
+                <strong>Database Management</strong>: Engineered a scalable database schema and optimized data queries to handle user and workout information efficiently.
+                <br />
+                <strong>Deployment and Security</strong>: Successfully deployed the application on Heroku and Netlify, ensuring seamless access while maintaining data security and user privacy.
+                <br />
+                <strong>Project Management</strong>: Effectively planned and executed the project timeline, coordinating development tasks to achieve milestones and deliver a fully functional MVP within a week.
+                <br />
               </FadeInText>
             </Box>
           </Paper>
@@ -114,8 +149,20 @@ function Resume({ bgImage }) {
               <FadeInText variant="body1" style={fadeProps}>
                 JavaScript | HTML, CSS<br />
                 Engage in a strategic battle of wits with a Connect 4 game that allows players to choose from several visual themes.<br />
-                Engineered a responsive game logic in JavaScript, achieving a smooth and error-free playing experience.<br />
-                Customized the user interface with CSS, providing multiple themes that enhance user engagement and visual appeal.
+                <strong>Designed and Developed</strong>: Created a Connect Four game using HTML, CSS, and JavaScript, showcasing strong front-end development skills.
+                <br />
+                <strong>Game Mechanics</strong>: Implemented game logic including initialization, move handling, win condition checks, and player turn management, ensuring a seamless and engaging user experience.
+                <br />
+                <strong>User Interaction</strong>: Added event listeners to handle player interactions and dynamically update the game board, enhancing interactivity.
+                <br />
+                <strong>Reset Functionality</strong>: Developed a reset function to restart the game, addressing challenges in event handling and state management.
+                <br />
+                <strong>Styling and Themes</strong>: Designed multiple color schemes and themes (e.g., Classic, Pac Man, Vice City) to enhance the game's visual appeal, demonstrating creativity and attention to detail.
+                <br />
+                <strong>Deployment</strong>: Successfully deployed the game, ensuring accessibility and usability for players.
+                <br />
+                <strong>Project Management</strong>: Planned and executed the project timeline, meeting milestones and delivering a functional game on schedule.
+                <br />
               </FadeInText>
             </Box>
           </Paper>
