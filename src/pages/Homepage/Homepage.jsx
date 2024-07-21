@@ -93,7 +93,7 @@ function Homepage({ bgImage }) {
         await next({ color: '#ffffff' });
       }
     },
-    config: { duration: 5000, easing: t => t * t * (3 - 2 * t) }, 
+    config: { duration: 2000, easing: t => t * t * (3 - 2 * t) }, 
   });
 
   return (

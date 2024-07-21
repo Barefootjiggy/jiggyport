@@ -55,23 +55,33 @@ const FlickerText = styled(animated(Typography))({
 function Projects({ bgImage }) {
   const classes = useStyles();
 
-  const flickerPropsClient = useSpring({
+  const smoothTransitionPropsClient = useSpring({
     from: { color: '#ffffff' },
-    to: { color: '#ab598b' },
-    config: { duration: 500 },
-    loop: { reverse: true },
+    to: async (next) => {
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        await next({ color: '#ab598b' });
+        await next({ color: '#ffffff' });
+      }
+    },
+    config: { duration: 2000, easing: t => t * t * (3 - 2 * t) },
   });
 
-  const flickerPropsTech = useSpring({
+  const smoothTransitionPropsTech = useSpring({
     from: { color: '#ffffff' },
-    to: { color: '#ab598b' },
-    config: { duration: 500 },
-    loop: { reverse: true },
+    to: async (next) => {
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        await next({ color: '#ab598b' });
+        await next({ color: '#ffffff' });
+      }
+    },
+    config: { duration: 2000, easing: t => t * t * (3 - 2 * t) },
   });
 
   return (
     <Container>
-      <FlickerText variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...flickerPropsClient }}>
+      <FlickerText variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...smoothTransitionPropsClient }}>
         CLIENT PROJECTS
       </FlickerText>
       <Grid container spacing={2} className={classes.clientSection} justifyContent="center">
@@ -111,7 +121,7 @@ function Projects({ bgImage }) {
           </Grid>
         ))}
       </Grid>
-      <FlickerText variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...flickerPropsTech }}>
+      <FlickerText variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...smoothTransitionPropsTech }}>
         TECH PROJECTS
       </FlickerText>
       <Grid container spacing={2} justifyContent="center">
