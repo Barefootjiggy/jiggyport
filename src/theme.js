@@ -10,7 +10,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto, Arial, sans-serif',
+    fontFamily: 'Zen Dots, Roboto, Arial, sans-serif',
   },
   components: {
     MuiCssBaseline: {
