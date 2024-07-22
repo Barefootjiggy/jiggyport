@@ -109,7 +109,7 @@ function Projects({ bgImage }) {
               {project.title}
             </Typography>
             <Typography
-              variant={isMobile ? "body2" : "body1"}
+              variant={isMobile ? "body1" : "body1"}
               component="p"
               style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}
             >
@@ -139,12 +139,21 @@ function Projects({ bgImage }) {
                   />
                 </Box>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2" style={{ color: '#ab598b' }}>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="body2" component="p" style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}>
-                    {project.description}
-                  </Typography>
+                <Typography
+              gutterBottom
+              variant={isMobile ? "h5" : "h2"}
+              component={isMobile ? "h3" : "h2"}
+              style={{ color: '#ab598b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+            >
+              {project.title}
+            </Typography>
+            <Typography
+              variant={isMobile ? "body1" : "body1"}
+              component="p"
+              style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}
+            >
+              {project.description}
+            </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions style={{ justifyContent: 'center' }}>
