@@ -88,7 +88,7 @@ function Projects({ bgImage }) {
       <Grid container spacing={2} className={classes.clientSection} justifyContent="center">
   {clientProjectsData.map(project => (
     <Grid item xs={12} sm={6} md={4} key={project.id}>
-      <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : 'none' }}>
+      <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : '0px 4px 15px 5px rgba(255, 255, 255, 1)' }}>
         <CardActionArea href={project.url} target="_blank">
           <Box p={2}>
             <CardMedia
@@ -127,7 +127,7 @@ function Projects({ bgImage }) {
       <Grid container spacing={2} justifyContent="center">
         {projectsData.map(project => (
           <Grid item xs={12} sm={6} md={4} key={project.id}>
-            <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : 'none' }}>
+            <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : '0px 4px 15px 5px rgba(255, 255, 255, 1)' }}>
               <CardActionArea href={project.url} target="_blank">
                 <Box p={2}>
                   <CardMedia
