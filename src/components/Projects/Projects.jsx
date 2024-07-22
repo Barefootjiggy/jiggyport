@@ -9,7 +9,7 @@ import CohortyImage from '../../assets/Cohorty-Desktop.png';
 import AjImage from '../../assets/trainwithamandajane.png';
 
 const clientProjectsData = [
-  { id: 1, title: "Trainwithamandajane", description: "Train with Amanda Jane is a personalized fitness training website that offers a variety of workout plans, nutritional advice, and one-on-one coaching sessions to help clients achieve their fitness goals.", url: "https://trainwithamandajane.com/", githubUrl: "", imageUrl: AjImage },
+  { id: 1, title: "Trainwithamandajane", description: "Trainwithamandajane is a personalized fitness training website designed to offer clients a variety of workout plans, nutritional advice, and one-on-one coaching sessions tailored to help them achieve their fitness goals. The project involved close collaboration with the client to understand their vision and requirements, resulting in a comprehensive solution that aligns with the business objectives of the fitness training service.", url: "https://trainwithamandajane.com/", githubUrl: "", imageUrl: AjImage },
 ];
 
 const projectsData = [
