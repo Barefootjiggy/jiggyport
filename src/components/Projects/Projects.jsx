@@ -1,4 +1,4 @@
-import { Button, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Box, Container } from '@mui/material';
+import { Button, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Box, Container, useMediaQuery, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useSpring, animated } from 'react-spring';
 import { styled } from '@mui/system';
@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '5px',
     boxShadow: '0px 4px 10px rgba(171, 89, 139, 1)',
   },
-  
 }));
 
 const FlickerText = styled(animated(Typography))({
@@ -54,6 +53,8 @@ const FlickerText = styled(animated(Typography))({
 
 function Projects({ bgImage }) {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const smoothTransitionPropsClient = useSpring({
     from: { color: '#ffffff' },
@@ -81,7 +82,7 @@ function Projects({ bgImage }) {
 
   return (
     <Container>
-      <FlickerText variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...smoothTransitionPropsClient }}>
+      <FlickerText variant={isMobile ? "h4" : "h2"} className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...smoothTransitionPropsClient }}>
         CLIENT PROJECTS
       </FlickerText>
       <Grid container spacing={2} className={classes.clientSection} justifyContent="center">
@@ -121,7 +122,7 @@ function Projects({ bgImage }) {
           </Grid>
         ))}
       </Grid>
-      <FlickerText variant="h2" className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...smoothTransitionPropsTech }}>
+      <FlickerText variant={isMobile ? "h4" : "h2"} className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...smoothTransitionPropsTech }}>
         TECH PROJECTS
       </FlickerText>
       <Grid container spacing={2} justifyContent="center">
