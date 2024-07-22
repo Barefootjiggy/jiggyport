@@ -86,42 +86,41 @@ function Projects({ bgImage }) {
         CLIENT PROJECTS
       </FlickerText>
       <Grid container spacing={2} className={classes.clientSection} justifyContent="center">
-        {clientProjectsData.map(project => (
-          <Grid item xs={12} sm={6} md={4} key={project.id}>
-            <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : 'none' }}>
-              <CardActionArea href={project.url} target="_blank">
-                <Box p={2}>
-                  <CardMedia
-                    component="img"
-                    alt={project.title}
-                    image={project.imageUrl}
-                    title={project.title}
-                    style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} 
-                  />
-                </Box>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2" style={{ color: '#ab598b' }}>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="body2" component="p" style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}>
-                    {project.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions style={{ justifyContent: 'center' }}>
-                <Button className={classes.button} href={project.url} target="_blank">
-                  Deployed App
-                </Button>
-                {project.githubUrl && (
-                  <Button className={classes.button} href={project.githubUrl} target="_blank">
-                    GitHub Link
-                  </Button>
-                )}
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+  {clientProjectsData.map(project => (
+    <Grid item xs={12} sm={6} md={4} key={project.id}>
+      <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : 'none' }}>
+        <CardActionArea href={project.url} target="_blank">
+          <Box p={2}>
+            <CardMedia
+              component="img"
+              alt={project.title}
+              image={project.imageUrl}
+              title={project.title}
+              style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }} 
+            />
+          </Box>
+          <CardContent>
+            <Typography
+              gutterBottom
+              variant={isMobile ? "h5" : "h2"}
+              component={isMobile ? "h3" : "h2"}
+              style={{ color: '#ab598b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+            >
+              {project.title}
+            </Typography>
+            <Typography
+              variant={isMobile ? "body2" : "body1"}
+              component="p"
+              style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}
+            >
+              {project.description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Grid>
+  ))}
+</Grid>
       <FlickerText variant={isMobile ? "h4" : "h2"} className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...smoothTransitionPropsTech }}>
         TECH PROJECTS
       </FlickerText>
