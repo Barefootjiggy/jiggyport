@@ -15,6 +15,7 @@ import Nodejs from '../../assets/Nodejs.png';
 import Css from '../../assets/Css.png'; 
 import Html from '../../assets/Html.png'; 
 import Javascript from '../../assets/Javascript.png';
+import Wordpress from '../../assets/Wordpress.png';
 import Profilenobg from '../../assets/Joshua_Pierrermbg.png';
 
 const StyledAvatar = styled(Avatar)({
@@ -122,6 +123,7 @@ function Homepage({ bgImage }) {
           {createSkillItem("CSS", Css, bgImage)}
           {createSkillItem("HTML", Html, bgImage)}
           {createSkillItem("JavaScript", Javascript, bgImage)}
+          {createSkillItem("Wordpress", Wordpress, bgImage)}
         </Grid>
         <Projects bgImage={bgImage} />
       </ProfileBox>

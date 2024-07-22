@@ -25,10 +25,10 @@ function Resume({ bgImage }) {
   return (
     <FadeInBox p={3} style={{ paddingTop: '80px', ...fadeProps }}>
       <HeaderBox style={{ marginTop: '20px' }} bgImage={bgImage}>
-        <Typography variant="h4" gutterBottom>Joshua Pierre</Typography>
+        <Typography variant="h4" gutterBottom>More About Me</Typography>
         <Typography variant="h6" gutterBottom>Full Stack Developer</Typography>
         <Typography variant="body1" gutterBottom>
-          Passionate about creating solutions that blend front-end aesthetics with back-end efficiency. Experienced in developing web applications and ensuring the protection of sensitive information in compliance with industry standards.
+        I initially heard about coding back in 2017 and played around with it a little but I was really busy at the time. Fast forward to 2024 and I have been feeling burnt out and uninspired at my job just due to the lack of creativity which was something I had tapped more into over the years through workouts, poetry, drawing and just daily life. I remembered the bootcamp I did a free day with and signed up for the bootcamp and 12 weeks later I had a vast amount of knowledge on how to learn how to code. I am passionate about running, CrossFit, bike commuting, and engaging in puzzles and card/board games, which help me stay sharp and focused. Professionally, I create solutions that blend front-end aesthetics with back-end efficiency, with experience in developing web applications and ensuring the protection of sensitive information in compliance with industry standards.
         </Typography>
         <Typography variant="body2">
           Location: Brooklyn, NY | Contact: 570-540-6871 | Email: jpgiant@yahoo.com
