@@ -41,7 +41,7 @@ function Resume({ bgImage }) {
           <Paper elevation={3}>
             <Box p={3}>
               <FadeInText variant="body1" style={fadeProps}>
-                <strong>Languages:</strong> Python, JavaScript, HTML, CSS, SQL, Mongo, JSON<br />
+                <strong>Languages:</strong> Python, JavaScript, TypeScript, HTML, CSS, SQL, Mongo, JSON<br />
                 <strong>Libraries, Frameworks and Databases:</strong> React, Express.js, Django, MongoDB, RESTful Routing<br />
               </FadeInText>
             </Box>
@@ -124,9 +124,9 @@ function Resume({ bgImage }) {
             <Box p={3}>
               <Typography variant="h6" style={{ color: '#ab598b' }}>WOD4U - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://wod4u.netlify.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <FadeInText variant="body1" style={fadeProps}>
-                JavaScript | MongoDB, Node.js, Express<br />
+                TypeScript | MongoDB, Node.js, Express<br />
                 Elevate your fitness journey with WOD4U, an app that offers a comprehensive library of workouts with full customization options.<br />
-                <strong>Full-Stack Development</strong>: Built a comprehensive fitness application using JavaScript, HTML, CSS, and MongoDB, showcasing proficiency in both front-end and back-end technologies.
+                <strong>Full-Stack Development</strong>: Built a comprehensive fitness application using JavaScript originally then converted to TypeScript, HTML, CSS, and MongoDB, showcasing proficiency in both front-end and back-end technologies.
                 <br />
                 <strong>Backend Integration</strong>: Developed robust server-side logic with Express.js and MongoDB, implementing secure authentication and authorization mechanisms, including password hashing and token management.
                 <br />
@@ -147,9 +147,9 @@ function Resume({ bgImage }) {
             <Box p={3}>
               <Typography variant="h6" style={{ color: '#ab598b' }}>Connect 4 - <a href="https://github.com/Barefootjiggy/Connect-4" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://connect-4-hazel.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <FadeInText variant="body1" style={fadeProps}>
-                JavaScript | HTML, CSS<br />
+                TypeScript | HTML, CSS<br />
                 Engage in a strategic battle of wits with a Connect 4 game that allows players to choose from several visual themes.<br />
-                <strong>Designed and Developed</strong>: Created a Connect Four game using HTML, CSS, and JavaScript, showcasing strong front-end development skills.
+                <strong>Designed and Developed</strong>: Created a Connect Four game using HTML, CSS, and JavaScript originally then converted to TypeScript, showcasing strong front-end development skills.
                 <br />
                 <strong>Game Mechanics</strong>: Implemented game logic including initialization, move handling, win condition checks, and player turn management, ensuring a seamless and engaging user experience.
                 <br />
