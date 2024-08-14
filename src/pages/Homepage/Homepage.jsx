@@ -14,7 +14,7 @@ import ReactLogo from '../../assets/React.png';
 import Nodejs from '../../assets/Nodejs.png'; 
 import Css from '../../assets/Css.png'; 
 import Html from '../../assets/Html.png'; 
-import JavaScript from '../../assets/JavaScript.png'
+import JavaScript from '../../../assets/JavaScript.png';
 import Wordpress from '../../assets/Wordpress.png';
 import TypeScript from '../../assets/TypeScript.png'
 import Profilenobg from '../../assets/Joshua_Pierrermbg.png';
