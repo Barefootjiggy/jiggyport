@@ -190,7 +190,7 @@ function Resume({ bgImage }) {
             <Box p={3}>
               <Typography variant="h6" style={{ color: '#ab598b' }}>VNS Health, Authorization Coordinator</Typography>
               <FadeInText variant="body1" style={fadeProps}>
-                New York, NY, 04/2018 - 01/2024<br />
+                New York, NY, 09/2019 - 01/2024<br />
                 Managed patient authorizations and supported medical management in a fast-paced healthcare environment.<br />
                 Processed hundreds of medical authorizations monthly, ensuring timely patient access to required health services.<br />
                 Expanded team efforts in managing patient data, supporting effectiveness and patient satisfaction.<br />
