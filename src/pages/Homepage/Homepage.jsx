@@ -14,7 +14,7 @@ import ReactLogo from '../../assets/React.png';
 import Nodejs from '../../assets/Nodejs.png'; 
 import Css from '../../assets/Css.png'; 
 import Html from '../../assets/Html.png'; 
-import JavaScript from '../../../assets/JavaScript.png';
+import JS from '../../assets/JS.png';
 import Wordpress from '../../assets/Wordpress.png';
 import TypeScript from '../../assets/TypeScript.png'
 import Profilenobg from '../../assets/Joshua_Pierrermbg.png';
@@ -123,7 +123,7 @@ function Homepage({ bgImage }) {
           {createSkillItem("Node.js", Nodejs, bgImage)}
           {createSkillItem("CSS", Css, bgImage)}
           {createSkillItem("HTML", Html, bgImage)}
-          {createSkillItem("JavaScript", JavaScript, bgImage)}
+          {createSkillItem("JavaScript", JS, bgImage)}
           {createSkillItem("Wordpress", Wordpress, bgImage)}
           {createSkillItem("TypeScript", TypeScript, bgImage)}
         </Grid>
