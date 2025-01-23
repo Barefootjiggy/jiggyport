@@ -17,7 +17,7 @@ import Html from '../../assets/Html.png';
 import JS from '../../assets/JS.png';
 import Wordpress from '../../assets/Wordpress.png';
 import TypeScript from '../../assets/TypeScript.png'
-import Profilenobg from '../../assets/Joshua_Pierrermbg.png';
+import Profilenobg from '../../assets/Nycscnbg.png';
 
 const StyledAvatar = styled(Avatar)({
   width: 200, 
