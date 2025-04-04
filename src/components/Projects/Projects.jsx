@@ -150,39 +150,77 @@ function Projects({ bgImage }) {
         {clientProjectsData.map(project => (
           <Grid item xs={12} sm={6} md={4} key={project.id}>
             <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : '0px 4px 15px 5px rgba(255, 255, 255, 1)' }}>
-              <CardActionArea onClick={() => setShowNewVersion(!showNewVersion)} style={{ cursor: 'pointer' }}>
-                <Box p={2}>
-                  <CardMedia
-                    component="img"
-                    alt={project.title}
-                    image={showNewVersion ? project.afterImages[imageIndex] : project.beforeImageUrl}
-                    title={project.title}
-                    style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }}
-                  />
-                  <Typography align="center" style={{ color: '#ab598b', marginTop: '10px' }}>
-                    {showNewVersion
-                      ? `After: Custom Build (Slide ${imageIndex + 1}/${project.afterImages.length} Click to biew before)`
-                      : "Before: WordPress Version (Click to view after)"}
-                  </Typography>
-                </Box>
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant={isMobile ? "h5" : "h2"}
-                    component={isMobile ? "h3" : "h2"}
-                    style={{ color: '#ab598b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
-                  >
-                    {project.title}
-                  </Typography>
-                  <Typography
-                    variant={isMobile ? "body1" : "body1"}
-                    component="p"
-                    style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}
-                  >
-                    {project.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
+            <CardActionArea
+  onClick={() => window.open(project.url, '_blank')}
+  style={{ cursor: 'pointer' }}
+>
+  <Box p={2}>
+    <CardMedia
+      component="img"
+      alt={project.title}
+      image={showNewVersion ? project.afterImages[imageIndex] : project.beforeImageUrl}
+      title={project.title}
+      style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }}
+    />
+
+    {showNewVersion ? (
+      <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
+        <Typography align="center" style={{ color: '#ab598b', marginBottom: '10px' }}>
+          After: Custom Build (Slide {imageIndex + 1}/{project.afterImages.length})
+        </Typography>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={(e) => {
+            e.stopPropagation();
+            setShowNewVersion(false);
+          }}
+          style={{ backgroundColor: '#ab598b', color: '#fff' }}
+        >
+          Back to WordPress Version
+        </Button>
+      </Box>
+    ) : (
+      <Box display="flex" justifyContent="center" mt={2}>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={(e) => {
+            e.stopPropagation();
+            setShowNewVersion(true);
+          }}
+          style={{ backgroundColor: '#ab598b', color: '#fff' }}
+        >
+          Click to View After
+        </Button>
+      </Box>
+    )}
+  </Box>
+
+  <CardContent>
+    <Typography
+      gutterBottom
+      variant={isMobile ? "h5" : "h2"}
+      component={isMobile ? "h3" : "h2"}
+      style={{
+        color: '#ab598b',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+      }}
+    >
+      {project.title}
+    </Typography>
+    <Typography
+      variant={isMobile ? "body1" : "body1"}
+      component="p"
+      style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}
+    >
+      {project.description}
+    </Typography>
+  </CardContent>
+</CardActionArea>
+
               <CardActions style={{ justifyContent: 'center' }}>
                 <Button className={classes.button} href={project.deployedUrl} target="_blank">
                   Deployed App
