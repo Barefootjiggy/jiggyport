@@ -156,8 +156,12 @@ useEffect(() => {
           <Grid item xs={12} sm={6} md={4} key={project.id}>
             <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : '0px 4px 15px 5px rgba(255, 255, 255, 1)' }}>
             <CardActionArea
-  onClick={() => window.open(project.url, '_blank')}
-  style={{ cursor: 'pointer' }}
+  onClick={() => {
+    if (!isMobile) {
+      window.open(project.url, '_blank');
+    }
+  }}
+  style={{ cursor: isMobile ? 'default' : 'pointer' }}
 >
   <Box p={2}>
     <CardMedia
