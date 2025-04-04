@@ -108,7 +108,7 @@ function Homepage({ bgImage }) {
           <StyledAvatar src={Profilenobg} alt="Joshua Pierre" onClick={handleAvatarClick} />
         </animated.div>
         <CenteredTypography variant="h6" component="p" padding="0 20px" bgImage={bgImage}>
-          I am a full stack developer with expertise in blending front-end design with back-end efficiency to create intuitive user experiences. In the healthcare industry, I created over 300 medical authorizations monthly, adhering to HIPAA guidelines to protect sensitive information. My experience as a Software Engineer has honed my time-management skills, enabling me to meet strict deadlines and maintain high standards of compliance and security. I aim to apply these skills to make significant contributions in a company environment.
+        I’m a full-stack software engineer with a background in healthcare and customer service. After completing General Assembly’s Software Engineering Immersive, I’ve focused on building clean, responsive web apps using React, JavaScript, and modern frameworks. Recently, I redesigned a personal training site, replacing a restrictive WordPress setup with a custom React build that’s faster, more modern, and user-friendly. I bring strong communication, real-world client experience, and a passion for solving problems through thoughtful, accessible design.
         </CenteredTypography>
         <Grid container spacing={2} alignItems="center" justifyContent="center">
           {createSkillItem("Django", Django, bgImage)}
