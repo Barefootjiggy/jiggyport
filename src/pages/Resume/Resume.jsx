@@ -28,7 +28,9 @@ function Resume({ bgImage }) {
         <Typography variant="h4" gutterBottom>More About Me</Typography>
         <Typography variant="h6" gutterBottom>Full Stack Developer</Typography>
         <Typography variant="body1" gutterBottom>
-        I initially heard about coding back in 2017 and played around with it a little but wasn't committed to it at the time. Fast forward to 2024 and I was feeling burnt out and uninspired at my job due to the lack of creativity which was something I had tapped more into over the years through workouts, poetry, drawing and just daily life. I signed up for a bootcamp and 12 weeks later I had a vast amount of knowledge on how to learn how to code. I am passionate about fitness and enjoy engaging in board games, puzzles, and other activities that challenge my problem-solving skills and strategic thinking. Professionally, I design and develop solutions that seamlessly combine front-end aesthetics with back-end efficiency, leveraging my experience in creating web applications and safeguarding sensitive information in compliance with industry standards.
+        I first explored coding in 2017, but it wasn’t until 2024 — feeling creatively stifled in my job — that I fully committed to it. I enrolled in General Assembly’s Software Engineering Immersive and, 12 weeks later, walked away with the tools and mindset to build full-stack applications from the ground up.
+
+Since then, I’ve rebuilt a personal training business website from a restrictive WordPress setup into a fully custom React app — improving performance, design, and usability. I also collaborate with clients to translate their vision into responsive, user-friendly experiences. Before tech, I spent over six years in healthcare and customer service, where I honed skills in communication, problem-solving, and handling sensitive information with care and compliance. Outside of coding, I’m passionate about fitness and enjoy activities that challenge my brain — like puzzles, board games, and poetry. I bring that same energy and curiosity to my work as a developer: thoughtful, strategic, and always learning.
         </Typography>
         <Typography variant="body2">
           Location: Brooklyn, NY | Contact: 570-540-6871 | Email: jpgiant@yahoo.com
@@ -56,13 +58,13 @@ function Resume({ bgImage }) {
             <Box p={3}>
               <Typography variant="h6" style={{ color: '#ab598b' }}>Trainwithamandajane - <a href="https://trainwithamandajane.com/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <FadeInText variant="body1" style={fadeProps}>
-                Wordpress | <br />
-                Train with Amanda Jane is a personalized fitness training website that offers a variety of workout plans, nutritional advice, and one-on-one coaching sessions to help clients achieve their fitness goals.<br />
-                <strong>Website Development</strong>: Designed and developed a comprehensive fitness training website using WordPress, providing personalized workout plans, nutritional advice, and coaching sessions.<br />
-                <strong>User Interface Design</strong>: Created a user-friendly and visually appealing interface to enhance user engagement and improve overall user experience.<br />
-                <strong>Responsive Design</strong>: Implemented a fully responsive design to ensure seamless usability across various devices, including desktops, tablets, and smartphones.<br />
-                <strong>Content Management</strong>: Utilized WordPress's content management system to organize and manage various types of content, including blog posts, workout plans, and nutritional guides.<br />
-                <strong>SEO Optimization</strong>: Applied SEO best practices to improve search engine rankings, increase website traffic, and attract more clients.<br />
+              WordPress → React Rebuild | <br />
+              Train with Amanda Jane is a personalized fitness training website offering customized workout plans, nutritional guidance, and one-on-one coaching. The original site was built using WordPress and later completely rebuilt from scratch using React to enhance performance, control, and design.<br />
+                <strong>Website Development</strong>: Rebuilt the original WordPress site as a fully custom React application using Materialize CSS, improving speed, maintainability, and design flexibility.<br />
+                <strong>User Interface Design</strong>: Designed a more modern, branded interface with improved layout, cleaner navigation, and mobile-first responsiveness.<br />
+                <strong>Performance Optimization</strong>: Replaced slow-loading templates with reusable React components and reduced plugin reliance, resulting in faster page load times and better UX.<br />
+                <strong>Responsiveness</strong>: Built a fully responsive layout from the ground up to ensure seamless usability across devices.<br />
+                <strong>Client Collaboration</strong>: Worked closely with the client to understand her evolving vision and deliver a digital experience that better reflects her growing brand.<br />
                 <strong>Customization</strong>: Customized themes and plugins to meet specific project requirements and enhance website functionality.<br />
                 <strong>Client Collaboration</strong>: Worked closely with the client to understand their vision and requirements, delivering a tailored solution that aligns with their fitness training business goals.<br />
               </FadeInText>
@@ -115,6 +117,7 @@ function Resume({ bgImage }) {
                 <br />
                 <strong>Version Control</strong>: Collaborated using Git and GitHub, maintaining version control and managing code reviews effectively.
                 <br />
+                <strong>Before vs. After Impact</strong>: The new React build improved performance, aesthetics, and user experience while giving the client greater control over future updates and content.<br />
               </FadeInText>
             </Box>
           </Paper>
