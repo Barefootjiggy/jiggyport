@@ -20,7 +20,7 @@ const clientProjectsData = [
   {
     id: 1,
     title: "Trainwithamandajane",
-    description: "Trainwithamandajane is a personalized fitness training website that started as a WordPress update and evolved into a fully custom build. The new version features modern styling, responsive design, and a more efficient client-facing experience.",
+    description: "'Trainwithamandajane' is a personal training website originally built with WordPress. The initial version was limited in customization and visual appeal, relying heavily on static templates and plugins. For the updated version, I collaborated with the client to rebuild the entire site from scratch using React and Materialize. The new site is fully responsive, visually cleaner, faster-loading, and designed to better reflect her brand. It includes smooth animations, improved mobile usability, and a more modern, engaging user experience that sets it apart from the original.",
     beforeImageUrl: TAJbefore,
     afterImages: [TAJafter, TAJafter2, TAJafter3, TAJafter4, TAJafter5],
     url: "https://trainwithamandajane.com/",
