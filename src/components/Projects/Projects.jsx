@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Box, Container, useMediaQuery, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useSpring, animated } from 'react-spring';
@@ -101,22 +101,27 @@ function Projects({ bgImage }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const [showNewVersion, setShowNewVersion] = useState(false);
-  const [imageIndex, setImageIndex] = useState(0);
+const [showNewVersion, setShowNewVersion] = useState(false);
+const [imageIndex, setImageIndex] = useState(0);
+const [isPaused, setIsPaused] = useState(false);
+const [showPausedMessage, setShowPausedMessage] = useState(false);
+const lastTouchTimeRef = useRef(0);
+const [slideshowStarted, setSlideshowStarted] = useState(false);
 
-  useEffect(() => {
-    let interval;
-    if (showNewVersion) {
-      interval = setInterval(() => {
-        setImageIndex((prev) =>
-          (prev + 1) % clientProjectsData[0].afterImages.length
-        );
-      }, 3000);
-    } else {
-      setImageIndex(0);
-    }
-    return () => clearInterval(interval);
-  }, [showNewVersion]);
+
+
+useEffect(() => {
+  let interval;
+  if (showNewVersion && !isPaused) {
+    interval = setInterval(() => {
+      setImageIndex((prev) =>
+        (prev + 1) % clientProjectsData[0].afterImages.length
+      );
+    }, 3000);
+  }
+  return () => clearInterval(interval);
+}, [showNewVersion, isPaused]);
+
 
   const smoothTransitionPropsClient = useSpring({
     from: { color: '#ffffff' },
@@ -160,9 +165,68 @@ function Projects({ bgImage }) {
       alt={project.title}
       image={showNewVersion ? project.afterImages[imageIndex] : project.beforeImageUrl}
       title={project.title}
+      onMouseEnter={() => {
+        if (slideshowStarted) {
+          setIsPaused(true);
+          setShowPausedMessage(true);
+        }
+      }}
+      onMouseLeave={() => {
+        if (slideshowStarted) {
+          setIsPaused(false);
+          setShowPausedMessage(false);
+        }
+      }}
+      onTouchStart={(e) => {
+        if (!slideshowStarted) return;
+      
+        e.stopPropagation(); // ✅ this is the key line
+      
+        const now = Date.now();
+        if (now - lastTouchTimeRef.current < 500) {
+          // Second tap = resume
+          setIsPaused(false);
+          setShowPausedMessage(false);
+        } else {
+          // First tap = pause
+          setIsPaused(true);
+          setShowPausedMessage(true);
+        }
+        lastTouchTimeRef.current = now;
+      }}
       style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }}
     />
 
+    {/* ⏸️ Toast Message */}
+    {showPausedMessage && slideshowStarted && (
+  <Typography
+    variant="caption"
+    align="center"
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '6px',
+      color: '#fff',
+      backgroundColor: '#ab598b',
+      padding: '6px 12px',
+      borderRadius: '4px',
+      marginTop: '8px',
+      animation: 'fadeOut 3s ease-out forwards',
+      maxWidth: '80%',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    }}
+  >
+    <span role="img" aria-label="paused">⏸️</span>
+    {isMobile
+      ? "Slideshow paused — tap again to resume"
+      : "Slideshow paused — remove cursor to resume"}
+  </Typography>
+)}
+
+
+    {/* Toggle Button / Slide Info */}
     {showNewVersion ? (
       <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
         <Typography align="center" style={{ color: '#ab598b', marginBottom: '10px' }}>
@@ -174,6 +238,9 @@ function Projects({ bgImage }) {
           onClick={(e) => {
             e.stopPropagation();
             setShowNewVersion(false);
+            setSlideshowStarted(false); // reset
+            setIsPaused(false); // reset just in case
+            setShowPausedMessage(false);
           }}
           style={{ backgroundColor: '#ab598b', color: '#fff' }}
         >
@@ -188,6 +255,8 @@ function Projects({ bgImage }) {
           onClick={(e) => {
             e.stopPropagation();
             setShowNewVersion(true);
+            setSlideshowStarted(true); // ✅ enable toast message now
+
           }}
           style={{ backgroundColor: '#ab598b', color: '#fff' }}
         >
@@ -202,12 +271,7 @@ function Projects({ bgImage }) {
       gutterBottom
       variant={isMobile ? "h5" : "h2"}
       component={isMobile ? "h3" : "h2"}
-      style={{
-        color: '#ab598b',
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-      }}
+      style={{ color: '#ab598b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
     >
       {project.title}
     </Typography>
@@ -220,6 +284,7 @@ function Projects({ bgImage }) {
     </Typography>
   </CardContent>
 </CardActionArea>
+
 
               <CardActions style={{ justifyContent: 'center' }}>
                 <Button className={classes.button} href={project.deployedUrl} target="_blank">
