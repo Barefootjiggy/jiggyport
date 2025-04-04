@@ -224,7 +224,7 @@ useEffect(() => {
   >
     <span role="img" aria-label="paused">⏸️</span>
     {isMobile
-      ? "Slideshow paused — tap again to resume"
+      ? "Slideshow paused — tap here to resume"
       : "Slideshow paused — remove cursor to resume"}
   </Typography>
 )}
