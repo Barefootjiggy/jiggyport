@@ -65,8 +65,8 @@ Since then, I’ve rebuilt a personal training business website from a restricti
                 <strong>Performance Optimization</strong>: Replaced slow-loading templates with reusable React components and reduced plugin reliance, resulting in faster page load times and better UX.<br />
                 <strong>Responsiveness</strong>: Built a fully responsive layout from the ground up to ensure seamless usability across devices.<br />
                 <strong>Client Collaboration</strong>: Applied SEO best practices to improve search engine rankings, increase website traffic, and attract more clients.<br />
-                <strong>Customization</strong>: Customized themes and plugins to meet specific project requirements and enhance website functionality.<br />
-                <strong>Client Collaboration</strong>: Worked closely with the client to understand their vision and requirements, delivering a tailored solution that aligns with their fitness training business goals.<br />
+                <strong>Before vs. After Impact</strong>: The new React build improved performance, aesthetics, and user experience while giving the client greater control over future updates and content.<br />
+               
               </FadeInText>
             </Box>
           </Paper>
