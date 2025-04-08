@@ -22,7 +22,7 @@ function Footer() {
       }
       case 1: {
         const link = document.createElement('a');
-        link.href = 'https://docs.google.com/document/d/1vQRjouMO8hj3-bxMZAhdh50PZOEU_vwuiRmx0lCePEs/export?format=pdf';
+        link.href = 'https://docs.google.com/document/d/1CAZCWLcd_seMeuuEGNM0peNzr2z9amrkydlaHED22Ss/export?format=pdf';
         link.download = 'Joshua_Pierre_Resume.pdf';
         document.body.appendChild(link);
         link.click();

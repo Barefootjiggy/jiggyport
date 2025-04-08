@@ -66,7 +66,7 @@ Since then, I’ve rebuilt a personal training business website from a restricti
                 <strong>Responsiveness</strong>: Built a fully responsive layout from the ground up to ensure seamless usability across devices.<br />
                 <strong>Client Collaboration</strong>: Applied SEO best practices to improve search engine rankings, increase website traffic, and attract more clients.<br />
                 <strong>Before vs. After Impact</strong>: The new React build improved performance, aesthetics, and user experience while giving the client greater control over future updates and content.<br />
-               
+           
               </FadeInText>
             </Box>
           </Paper>
