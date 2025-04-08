@@ -173,6 +173,37 @@ Since then, I’ve rebuilt a personal training business website from a restricti
 
       <Box mt={3} mb={3}>
         <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: bgImage === '/mountainsky.jpg' ? '#000000' : '#ffffff' }}>EXPERIENCE</FadeInText>
+
+        <Box mb={3}>
+          <Paper elevation={3}>
+            <Box p={3}>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>Independent Contractor, Uber Eats Delivery Driver</Typography>
+              <FadeInText variant="body1" style={fadeProps}>
+                Brooklyn, NY, 01/2025 - Present<br />
+                Consistently maintained Platinum Status, reflecting top-tier customer ratings, high delivery reliability, and order completion rate.<br />
+                Managed time effectively to complete multiple deliveries per shift while ensuring customer satisfaction.<br />
+                Maintained high customer ratings by consistently meeting delivery deadlines and handling orders with care.<br />
+                Developed strong self-motivation and reliability by independently managing schedules and earnings.
+              </FadeInText>
+            </Box>
+          </Paper>
+        </Box>
+
+        <Box mb={3}>
+          <Paper elevation={3}>
+            <Box p={3}>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>Driver and Foreman, Hot Guys Moving</Typography>
+              <FadeInText variant="body1" style={fadeProps}>
+                Brooklyn, NY, 04/2021 - Present<br />
+                Led and executed efficient moving operations, ensuring safe handling of goods, team coordination, and exceptional customer service in a fast-paced, physically demanding environment.<br />
+                Directed moving operations, ensuring safety, efficiency, and client satisfaction in a high-paced environment.<br />
+                Delivered exceptional customer service by addressing client inquiries, resolving issues, and ensuring a positive moving experience.<br />
+                Managed inventory and coordinated logistics, ensuring smooth and timely relocation processes.
+              </FadeInText>
+            </Box>
+          </Paper>
+        </Box>
+
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
@@ -187,6 +218,7 @@ Since then, I’ve rebuilt a personal training business website from a restricti
             </Box>
           </Paper>
         </Box>
+
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
@@ -216,6 +248,7 @@ Since then, I’ve rebuilt a personal training business website from a restricti
             </Box>
           </Paper>
         </Box>
+
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
