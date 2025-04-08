@@ -62,7 +62,7 @@ function Header({ onToggleBackground }) {
             <MailIcon />
           </StyledIconButton>
         </Tooltip>
-        <Tooltip title="Resume View">
+        <Tooltip title="Extended Resume">
           <StyledIconButton
             color="inherit"
             aria-label="resume"
