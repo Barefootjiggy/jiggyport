@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Button, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Box, Container, useMediaQuery, useTheme } from '@mui/material';
+import { Button, Grid, Card, CardActions, CardContent, CardMedia, Typography, Box, Container, useMediaQuery, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useSpring, animated } from 'react-spring';
 import { styled } from '@mui/system';
@@ -15,6 +15,9 @@ import TAJafter2 from '../../assets/TAJafter2.png';
 import TAJafter3 from '../../assets/TAJafter3.png';
 import TAJafter4 from '../../assets/TAJafter4.png';
 import TAJafter5 from '../../assets/TAJafter5.png';
+import MBTRTmockdash from '../../assets/MBTRTmockdash.png';
+import MBTRTlanding from '../../assets/MBTRTlanding.png';
+import MBTRTclientfeedbacks from '../../assets/MBTRTclientfeedbacks.png';
 
 const clientProjectsData = [
   {
@@ -27,6 +30,16 @@ const clientProjectsData = [
     deployedUrl: "https://trainwithamandajane.com/",
     githubUrl: "https://github.com/Barefootjiggy/TAJ-F",
   },
+  {
+    id: 6,
+    title: "MBTRT",
+    description: "MBT Response Tool is a web application designed to help fitness coaches on the MyBodyTutor platform streamline their client feedback process. The app scrapes submitted client logs using Selenium, parses them into labeled sections (e.g., meals, workouts, mindset, and goals), and uses the OpenAI API to generate personalized, empathetic responses for each section. Coaches can selectively regenerate AI responses, toggle between models (GPT-3.5 and GPT-4), and view client feedback in a clean, organized layout. The app includes a demo mode with mock client data to showcase its core features without needing a real login.",
+    beforeImageUrl: MBTRTlanding,
+    afterImages: [MBTRTmockdash, MBTRTclientfeedbacks],
+    url: "https://mbtrt-c6f69d488d00.herokuapp.com",
+    deployedUrl: "https://mbtrt-c6f69d488d00.herokuapp.com",
+    githubUrl: "https://github.com/Barefootjiggy/MBTRT",
+  }
 ];
 
 const projectsData = [
@@ -71,17 +84,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     textOverflow: 'ellipsis',
   },
-  projectDescription: {
-    color: theme.palette.primary.main,
-  },
   sectionTitle: {
     margin: '20px 0',
     color: theme.palette.primary.main,
-  },
-  clientSection: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
   },
   button: {
     padding: '10px 20px',
@@ -96,32 +101,57 @@ const FlickerText = styled(animated(Typography))({
   marginBottom: '20px',
 });
 
-function Projects({ bgImage }) {
+export default function Projects({ bgImage }) {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-const [showNewVersion, setShowNewVersion] = useState(false);
-const [imageIndex, setImageIndex] = useState(0);
-const [isPaused, setIsPaused] = useState(false);
-const [showPausedMessage, setShowPausedMessage] = useState(false);
-const lastTouchTimeRef = useRef(0);
-const [slideshowStarted, setSlideshowStarted] = useState(false);
+  const [slideshowStates, setSlideshowStates] = useState({});
+  const [pausedStates, setPausedStates] = useState({});
+  const lastTouchTimeRef = useRef(0);
+  const [slideshowStarted, setSlideshowStarted] = useState(false);
 
+  const startSlideshow = (projectId) => {
+    setSlideshowStates((prev) => ({
+      ...prev,
+      [projectId]: { showNewVersion: true, imageIndex: 0 }
+    }));
+  };
 
+  const stopSlideshow = (projectId) => {
+    setSlideshowStates((prev) => ({
+      ...prev,
+      [projectId]: { showNewVersion: false, imageIndex: 0 }
+    }));
+  };
 
-useEffect(() => {
-  let interval;
-  if (showNewVersion && !isPaused) {
-    interval = setInterval(() => {
-      setImageIndex((prev) =>
-        (prev + 1) % clientProjectsData[0].afterImages.length
-      );
+  const incrementImageIndex = (projectId, length) => {
+    setSlideshowStates((prev) => {
+      const currentIndex = prev[projectId]?.imageIndex || 0;
+      return {
+        ...prev,
+        [projectId]: {
+          ...prev[projectId],
+          imageIndex: (currentIndex + 1) % length
+        }
+      };
+    });
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      clientProjectsData.forEach(project => {
+        if (
+          slideshowStates[project.id]?.showNewVersion &&
+          !pausedStates[project.id]
+        ) {
+          incrementImageIndex(project.id, project.afterImages.length);
+        }
+      });
     }, 3000);
-  }
-  return () => clearInterval(interval);
-}, [showNewVersion, isPaused]);
 
+    return () => clearInterval(interval);
+  }, [slideshowStates, pausedStates]);
 
   const smoothTransitionPropsClient = useSpring({
     from: { color: '#ffffff' },
@@ -145,162 +175,141 @@ useEffect(() => {
     config: { duration: 2000, easing: t => t * t * (3 - 2 * t) },
   });
 
-  return (
+return (
     <Container>
       <FlickerText variant={isMobile ? "h4" : "h2"} className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...smoothTransitionPropsClient }}>
         CLIENT PROJECTS
       </FlickerText>
 
-      <Grid container spacing={2} className={classes.clientSection} justifyContent="center">
-        {clientProjectsData.map(project => (
-          <Grid item xs={12} sm={6} md={4} key={project.id}>
-            <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : '0px 4px 15px 5px rgba(255, 255, 255, 1)' }}>
-            <CardActionArea
-  onClick={() => {
-    if (!isMobile) {
-      window.open(project.url, '_blank');
-    }
-  }}
-  style={{ cursor: isMobile ? 'default' : 'pointer' }}
->
-  <Box p={2}>
-    <CardMedia
-      component="img"
-      alt={project.title}
-      image={showNewVersion ? project.afterImages[imageIndex] : project.beforeImageUrl}
-      title={project.title}
-      onMouseEnter={() => {
-        if (slideshowStarted) {
-          setIsPaused(true);
-          setShowPausedMessage(true);
-        }
-      }}
-      onMouseLeave={() => {
-        if (slideshowStarted) {
-          setIsPaused(false);
-          setShowPausedMessage(false);
-        }
-      }}
-      onTouchStart={(e) => {
-        if (!slideshowStarted) return;
-      
-        e.stopPropagation(); // ✅ this is the key line
-      
-        const now = Date.now();
-        if (now - lastTouchTimeRef.current < 500) {
-          // Second tap = resume
-          setIsPaused(false);
-          setShowPausedMessage(false);
-        } else {
-          // First tap = pause
-          setIsPaused(true);
-          setShowPausedMessage(true);
-        }
-        lastTouchTimeRef.current = now;
-      }}
-      style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }}
-    />
+      <Grid container spacing={2} justifyContent="center">
+        {clientProjectsData.map((project) => {
+          const current = slideshowStates[project.id] || {};
+          const currentIndex = current.imageIndex || 0;
 
-    {/* ⏸️ Toast Message */}
-    {showPausedMessage && slideshowStarted && (
-  <Typography
-    variant="caption"
-    align="center"
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '6px',
-      color: '#fff',
-      backgroundColor: '#ab598b',
-      padding: '6px 12px',
-      borderRadius: '4px',
-      marginTop: '8px',
-      animation: 'fadeOut 3s ease-out forwards',
-      maxWidth: '80%',
-      marginLeft: 'auto',
-      marginRight: 'auto',
-    }}
-  >
-    <span role="img" aria-label="paused">⏸️</span>
-    {isMobile
-      ? "Slideshow paused — tap here to resume"
-      : "Slideshow paused — remove cursor to resume"}
-  </Typography>
-)}
+          return (
+            <Grid item xs={12} sm={6} md={4} key={project.id}>
+              <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : '0px 4px 15px 5px rgba(255, 255, 255, 1)' }}>
+                <Box p={2}>
+                  <a href={project.url} target="_blank" rel="noopener noreferrer">
+                    <CardMedia
+                      component="img"
+                      alt={project.title}
+                      image={current.showNewVersion ? project.afterImages[currentIndex] : project.beforeImageUrl}
+                      title={project.title}
+                      onMouseEnter={() => {
+                        if (slideshowStarted) {
+                          setPausedStates(prev => ({ ...prev, [project.id]: true }));
+                        }
+                      }}
+                      onMouseLeave={() => {
+                        if (slideshowStarted) {
+                          setPausedStates(prev => ({ ...prev, [project.id]: false }));
+                        }
+                      }}
+                      onTouchStart={(e) => {
+                        if (!slideshowStarted) return;
+                        e.stopPropagation();
+                        const now = Date.now();
+                        if (now - lastTouchTimeRef.current < 500) {
+                          setPausedStates(prev => ({ ...prev, [project.id]: false }));
+                        } else {
+                          setPausedStates(prev => ({ ...prev, [project.id]: true }));
+                        }
+                        lastTouchTimeRef.current = now;
+                      }}
+                    
+                      style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }}
+                    />
+                  </a>
 
+                  {pausedStates[project.id] && slideshowStarted && (
+                    <Typography
+                      variant="caption"
+                      align="center"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                        color: '#fff',
+                        backgroundColor: '#ab598b',
+                        padding: '6px 12px',
+                        borderRadius: '4px',
+                        marginTop: '8px',
+                        animation: 'fadeOut 3s ease-out forwards',
+                        maxWidth: '80%',
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                      }}
+                    >
+                      <span role="img" aria-label="paused">⏸️</span>
+                      {isMobile
+                        ? "Slideshow paused — tap here to resume"
+                        : "Slideshow paused — remove cursor to resume"}
+                    </Typography>
+                  )}
 
-    {/* Toggle Button / Slide Info */}
-    {showNewVersion ? (
-      <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
-        <Typography align="center" style={{ color: '#ab598b', marginBottom: '10px' }}>
-          After: Custom Build (Slide {imageIndex + 1}/{project.afterImages.length})
-        </Typography>
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={(e) => {
-            e.stopPropagation();
-            setShowNewVersion(false);
-            setSlideshowStarted(false); // reset
-            setIsPaused(false); // reset just in case
-            setShowPausedMessage(false);
-          }}
-          style={{ backgroundColor: '#ab598b', color: '#fff' }}
-        >
-          Back to WordPress Version
-        </Button>
-      </Box>
-    ) : (
-      <Box display="flex" justifyContent="center" mt={2}>
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={(e) => {
-            e.stopPropagation();
-            setShowNewVersion(true);
-            setSlideshowStarted(true); // ✅ enable toast message now
+                  {!current.showNewVersion && (
+                    <Box display="flex" justifyContent="center" mt={2}>
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          startSlideshow(project.id);
+                          setSlideshowStarted(true);
+                        }}
+                        style={{ backgroundColor: '#ab598b', color: '#fff' }}
+                      >
+                        {project.id === 6 ? 'Click for Slideshow' : 'Click to View After'}
+                      </Button>
+                    </Box>
+                  )}
 
-          }}
-          style={{ backgroundColor: '#ab598b', color: '#fff' }}
-        >
-          Click to View After
-        </Button>
-      </Box>
-    )}
-  </Box>
+                  {current.showNewVersion && project.id !== 6 && (
+                    <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
+                      <Typography align="center" style={{ color: '#ab598b', marginBottom: '10px' }}>
+                        After: Custom Build (Slide {currentIndex + 1}/{project.afterImages.length})
+                      </Typography>
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          stopSlideshow(project.id);
+                          setSlideshowStarted(false);
+                          setIsPaused(false);
+                          setShowPausedMessage(false);
+                        }}
+                        style={{ backgroundColor: '#ab598b', color: '#fff' }}
+                      >
+                        Back to WordPress Version
+                      </Button>
+                    </Box>
+                  )}
+                </Box>
 
-  <CardContent>
-    <Typography
-      gutterBottom
-      variant={isMobile ? "h5" : "h2"}
-      component={isMobile ? "h3" : "h2"}
-      style={{ color: '#ab598b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
-    >
-      {project.title}
-    </Typography>
-    <Typography
-      variant={isMobile ? "body1" : "body1"}
-      component="p"
-      style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}
-    >
-      {project.description}
-    </Typography>
-  </CardContent>
-</CardActionArea>
+                <CardContent>
+                  <Typography gutterBottom variant={isMobile ? "h5" : "h2"} component={isMobile ? "h3" : "h2"} style={{ color: '#ab598b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    {project.title}
+                  </Typography>
+                  <Typography variant={isMobile ? "body1" : "body1"} component="p" style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}>
+                    {project.description}
+                  </Typography>
+                </CardContent>
 
-
-              <CardActions style={{ justifyContent: 'center' }}>
-                <Button className={classes.button} href={project.deployedUrl} target="_blank">
-                  Deployed App
-                </Button>
-                <Button className={classes.button} href={project.githubUrl} target="_blank">
-                  GitHub Link
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
+                <CardActions style={{ justifyContent: 'center' }}>
+                  <Button className={classes.button} href={project.deployedUrl} target="_blank">
+                    Deployed App
+                  </Button>
+                  <Button className={classes.button} href={project.githubUrl} target="_blank">
+                    GitHub Link
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          );
+        })}
       </Grid>
 
       <FlickerText variant={isMobile ? "h4" : "h2"} className={classes.sectionTitle} style={{ textAlign: 'center', margin: '20px', ...smoothTransitionPropsTech }}>
@@ -308,11 +317,11 @@ useEffect(() => {
       </FlickerText>
 
       <Grid container spacing={2} justifyContent="center">
-        {projectsData.map(project => (
+        {projectsData.map((project) => (
           <Grid item xs={12} sm={6} md={4} key={project.id}>
             <Card style={{ backgroundColor: bgImage === '/mountainsky.jpg' ? '#000000' : 'transparent', boxShadow: bgImage === '/mountainsky.jpg' ? '0px 4px 15px 5px rgba(171, 89, 139, 1)' : '0px 4px 15px 5px rgba(255, 255, 255, 1)' }}>
-              <CardActionArea href={project.url} target="_blank">
-                <Box p={2}>
+              <Box p={2}>
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
                   <CardMedia
                     component="img"
                     alt={project.title}
@@ -320,25 +329,16 @@ useEffect(() => {
                     title={project.title}
                     style={{ objectFit: 'contain', maxHeight: '300px', marginTop: '50px' }}
                   />
-                </Box>
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant={isMobile ? "h5" : "h2"}
-                    component={isMobile ? "h3" : "h2"}
-                    style={{ color: '#ab598b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
-                  >
-                    {project.title}
-                  </Typography>
-                  <Typography
-                    variant={isMobile ? "body1" : "body1"}
-                    component="p"
-                    style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}
-                  >
-                    {project.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
+                </a>
+              </Box>
+              <CardContent>
+                <Typography gutterBottom variant={isMobile ? "h5" : "h2"} component={isMobile ? "h3" : "h2"} style={{ color: '#ab598b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  {project.title}
+                </Typography>
+                <Typography variant={isMobile ? "body1" : "body1"} component="p" style={{ color: bgImage === '/mountainsky.jpg' ? '#ffffff' : '#ffffff' }}>
+                  {project.description}
+                </Typography>
+              </CardContent>
               <CardActions style={{ justifyContent: 'center' }}>
                 <Button className={classes.button} href={project.url} target="_blank">
                   Deployed App
@@ -354,5 +354,3 @@ useEffect(() => {
     </Container>
   );
 }
-
-export default Projects;
