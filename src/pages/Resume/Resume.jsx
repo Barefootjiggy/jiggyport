@@ -53,6 +53,26 @@ Since then, I’ve rebuilt a personal training business website from a restricti
 
       <Box mt={3} mb={3}>
         <FadeInText variant="h5" gutterBottom align="center" style={{ ...fadeProps, color: bgImage === '/mountainsky.jpg' ? '#000000' : '#ffffff' }}>CLIENT PROJECTS</FadeInText>
+
+        <Box mb={3}>
+          <Paper elevation={3}>
+            <Box p={3}>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>MBTRT - <a href="https://mbtrt-c6f69d488d00.herokuapp.com" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <FadeInText variant="body1" style={fadeProps}>
+              Python | Flask, Selenium, OpenAI  <br />
+              MBTRT (MyBodyTutor Response Tool) is a custom-built web application designed to streamline the client feedback workflow for fitness coaches. The tool automates responses to client logs using OpenAI’s GPT models and web scraping via Selenium.<br />
+                <strong>AI Integration</strong>: Built an AI-driven workflow that parses client-submitted logs into distinct categories (meals, workouts, mindset, goals) and generates personalized feedback using OpenAI's API.<br />
+                <strong>Web Scraping Automation</strong>: Implemented Selenium to log into the MyBodyTutor platform, scrape client logs, and extract relevant data for automated processing.<br />
+                <strong>Interactive Dashboard</strong>: Designed a clean, coach-facing dashboard with mock data mode, allowing coaches to preview functionality without needing a live login.<br />
+                <strong>Efficiency Impact</strong>: The tool reduced manual feedback time for coaches, increased personalization quality, and helped maintain consistent engagement with clients.<br />
+                <strong>Python + Flask Development</strong>: Built the application entirely with Flask, including session-based login, secure credential handling, and dynamic content rendering using Jinja2 templates.<br />
+                <strong>User-Centered Features</strong>: Enabled section-by-section regeneration of AI responses, real-time editing, and persistent session support for seamless navigation between feedback pages.<br />
+           
+              </FadeInText>
+            </Box>
+          </Paper>
+        </Box>
+        
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
@@ -66,7 +86,6 @@ Since then, I’ve rebuilt a personal training business website from a restricti
                 <strong>Responsiveness</strong>: Built a fully responsive layout from the ground up to ensure seamless usability across devices.<br />
                 <strong>Client Collaboration</strong>: Applied SEO best practices to improve search engine rankings, increase website traffic, and attract more clients.<br />
                 <strong>Before vs. After Impact</strong>: The new React build improved performance, aesthetics, and user experience while giving the client greater control over future updates and content.<br />
-           
               </FadeInText>
             </Box>
           </Paper>
