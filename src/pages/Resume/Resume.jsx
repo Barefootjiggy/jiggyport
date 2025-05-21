@@ -97,7 +97,7 @@ Since then, I’ve rebuilt a personal training business website from a restricti
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6" style={{ color: '#ab598b' }}>Cohorty - <a href="https://github.com/Barefootjiggy/cohorty-frontend/tree/dev" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://cohorty-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>Cohorty - <a href="https://github.com/Barefootjiggy/cohorty-frontend/tree/dev" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://cohorty.webdevstuff.ninja/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <FadeInText variant="body1" style={fadeProps}>
                 JavaScript | React, MUI<br />
                 <strong>Front-End Development</strong>: Played a crucial role as a front-end developer in a team of four, creating a web application to manage courses, students, and assignments using React and Material UI.<br />

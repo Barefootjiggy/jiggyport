@@ -47,7 +47,7 @@ const projectsData = [
     id: 2,
     title: "Cohorty",
     description: "Cohorty is a modern web application designed to facilitate the tracking of courses, students, and assignments for General Assembly. This app streamlines administrative tasks, enhances staff and administrator visibility, and provides a centralized platform for managing academic data. Email Address: emre Password: doer6flatbed!RUMOR",
-    url: "https://cohorty-frontend.vercel.app/",
+    url: "https://cohorty.webdevstuff.ninja/",
     githubUrl: "https://github.com/Barefootjiggy/cohorty-frontend/tree/dev",
     imageUrl: CohortyImage,
   },
