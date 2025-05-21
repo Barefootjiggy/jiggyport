@@ -118,7 +118,7 @@ Since then, I’ve rebuilt a personal training business website from a restricti
         <Box mb={3}>
           <Paper elevation={3}>
             <Box p={3}>
-              <Typography variant="h6" style={{ color: '#ab598b' }}>Dutch - <a href="https://github.com/Barefootjiggy/Dutch-Frontend" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://frontend-dutch-by-wahgee.vercel.app/" target="_blank" rel="noopener noreferrer">App</a></Typography>
+              <Typography variant="h6" style={{ color: '#ab598b' }}>Dutch - <a href="https://github.com/Barefootjiggy/Dutch-Frontend" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://dutch.webdevstuff.ninja/" target="_blank" rel="noopener noreferrer">App</a></Typography>
               <FadeInText variant="body1" style={fadeProps}>
                 JavaScript | React, Radix UI<br />
                 A bill-splitting app that simplifies sharing expenses among friends, ensuring everyone pays their fair share.<br />
