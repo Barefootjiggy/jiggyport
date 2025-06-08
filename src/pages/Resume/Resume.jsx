@@ -2,11 +2,11 @@ import { lazy, Suspense } from 'react';
 import { Box, Typography } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
 import Loader from '../../components/Loader/Loader'
-const AboutMe = lazy(() => import('../../components/Cv/AboutMe'));
-const ClientProjects = lazy(() => import('../../components/Cv/ClientProjects'));
-const TechProjects = lazy(() => import('../../components/Cv/TechProjects'));
-const Experience = lazy(() => import('../../components/Cv/Experience'));
-const Education = lazy(() => import('../../components/Cv/Education'));
+const AboutMe = lazy(() => import('../../components/Cv/AboutMe/AboutMe'));
+const ClientProjects = lazy(() => import('../../components/Cv/CvProjects/ClientProjects'));
+const TechProjects = lazy(() => import('../../components/Cv/CvProjects/TechProjects'));
+const Experience = lazy(() => import('../../components/Cv/Experience/Experience'));
+const Education = lazy(() => import('../../components/Cv/Education/Education'));
 
 const AnimatedHeading = ({ children, variant = 'h5', color }) => {
   const fade = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, config: { duration: 1000 } });

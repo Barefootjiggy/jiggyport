@@ -1,11 +1,11 @@
-import { Box, Typography, Paper } from '@mui/material';
+import { Box } from '@mui/material';
+import ProjectCard from '../CvProjects/ProjectCard';
 
 function ClientProjects() {
-  const textColor = '#000';
-
   const projects = [
     {
       title: 'MBTRT',
+      github: 'https://github.com/Barefootjiggy/MBTRT',
       url: 'https://mbtrt-c6f69d488d00.herokuapp.com',
       stack: 'Python | Flask, Selenium, OpenAI',
       description: [
@@ -19,6 +19,7 @@ function ClientProjects() {
     },
     {
       title: 'Trainwithamandajane',
+      github: 'https://github.com/Barefootjiggy/TAJ-F',
       url: 'https://trainwithamandajane.com/',
       stack: 'WordPress → React Rebuild',
       description: [
@@ -34,22 +35,7 @@ function ClientProjects() {
     <Box mt={4} mb={4}>
 
       {projects.map((project, i) => (
-        <Box key={i} mb={3}>
-          <Paper elevation={3}>
-            <Box p={3}>
-              <Typography variant="h6" sx={{ color: '#ab598b' }}>
-                {project.title} - <a href={project.url} target="_blank" rel="noopener noreferrer"
-                >App</a>
-              </Typography>
-              <Typography variant="body2" sx={{ color: textColor }}>{project.stack}</Typography>
-              {project.description.map((line, j) => (
-                <Typography key={j} variant="body1" sx={{ color: textColor }}>
-                  {line}
-                </Typography>
-              ))}
-            </Box>
-          </Paper>
-        </Box>
+        <ProjectCard key={i} project={project} showGithub={true} showURL={true} />
       ))}
     </Box>
   );

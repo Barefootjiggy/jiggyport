@@ -1,8 +1,7 @@
-import { Box, Typography, Paper } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import EducationCard from './EducationCard'; 
 
 function Education() {
-  const textColor = '#000';
-
   const education = [
     {
       school: 'General Assembly',
@@ -26,25 +25,12 @@ function Education() {
 
   return (
     <Box mt={4} mb={4}>
+      <Typography variant="h5" align="center" gutterBottom sx={{ color: '#000' }}>
+        EDUCATION
+      </Typography>
 
       {education.map((edu, i) => (
-        <Box key={i} mb={3}>
-          <Paper elevation={3}>
-            <Box p={3}>
-              <Typography variant="h6" sx={{ color: '#ab598b' }}>
-                {edu.school}
-              </Typography>
-              <Typography variant="body2" sx={{ color: textColor }}>
-                {edu.location} | {edu.date}
-              </Typography>
-              {edu.details.map((line, j) => (
-                <Typography key={j} variant="body1" sx={{ color: textColor }}>
-                  {line}
-                </Typography>
-              ))}
-            </Box>
-          </Paper>
-        </Box>
+        <EducationCard key={i} {...edu} />
       ))}
     </Box>
   );

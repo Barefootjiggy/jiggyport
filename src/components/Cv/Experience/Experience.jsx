@@ -1,8 +1,7 @@
-import { Box, Typography, Paper } from '@mui/material';
+import { Box } from '@mui/material';
+import ExperienceCard from './ExperienceCard'; 
 
 function Experience() {
-  const textColor = '#000';
-
   const roles = [
     {
       title: 'Independent Contractor, Uber Eats Delivery Driver',
@@ -46,23 +45,7 @@ function Experience() {
     <Box mt={4} mb={4}>
 
       {roles.map((role, i) => (
-        <Box key={i} mb={3}>
-          <Paper elevation={3}>
-            <Box p={3}>
-              <Typography variant="h6" sx={{ color: '#ab598b' }}>
-                {role.title}
-              </Typography>
-              <Typography variant="body2" sx={{ color: textColor }}>
-                {role.location} | {role.dates}
-              </Typography>
-              {role.points.map((pt, j) => (
-                <Typography key={j} variant="body1" sx={{ color: textColor }}>
-                  {pt}
-                </Typography>
-              ))}
-            </Box>
-          </Paper>
-        </Box>
+        <ExperienceCard key={i} {...role} />
       ))}
     </Box>
   );
