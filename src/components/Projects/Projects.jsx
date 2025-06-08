@@ -299,10 +299,12 @@ return (
                 </CardContent>
 
                 <CardActions style={{ justifyContent: 'center' }}>
-                  <Button className={classes.button} href={project.deployedUrl} target="_blank">
+                  <Button className={classes.button} href={project.deployedUrl} target="_blank"
+                  rel="noopener noreferrer">
                     Deployed App
                   </Button>
-                  <Button className={classes.button} href={project.githubUrl} target="_blank">
+                  <Button className={classes.button} href={project.githubUrl} target="_blank"
+                  rel="noopener noreferrer">
                     GitHub Link
                   </Button>
                 </CardActions>
@@ -340,10 +342,12 @@ return (
                 </Typography>
               </CardContent>
               <CardActions style={{ justifyContent: 'center' }}>
-                <Button className={classes.button} href={project.url} target="_blank">
+                <Button className={classes.button} href={project.url} target="_blank"
+                rel="noopener noreferrer">
                   Deployed App
                 </Button>
-                <Button className={classes.button} href={project.githubUrl} target="_blank">
+                <Button className={classes.button} href={project.githubUrl} target="_blank"
+                rel="noopener noreferrer">
                   GitHub Link
                 </Button>
               </CardActions>

@@ -1,32 +1,32 @@
+import { lazy, Suspense, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/Homepage/Homepage';
-import Resume from './pages/Resume/Resume'
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
-import BackgroundCycler from './components/BackgroundCycler/BackgroundCycler'; 
-import { useState } from 'react';
+import Loader from './components/Loader/Loader'
+import BackgroundCycler from './components/BackgroundCycler/BackgroundCycler';
+
+const HomePage = lazy(() => import('./pages/Homepage/Homepage'));
+const Resume = lazy(() => import('./pages/Resume/Resume'));
 
 function App() {
-  const [bgImage, setBgImage] = useState('/deepsky.jpg');
+  const [bgImage, setBgImage] = useState('/deepsky.webp');
 
   const handleToggleBackground = () => {
-    setBgImage(prevImage =>
-      prevImage === '/deepsky.jpg' ? '/mountainsky.jpg' : '/deepsky.jpg'
-    );
+    setBgImage(prev => prev === '/deepsky.webp' ? '/mountainsky.webp' : '/deepsky.webp');
   };
 
   return (
-    <>
     <Router>
       <BackgroundCycler bgImage={bgImage} />
       <NavBar onToggleBackground={handleToggleBackground} />
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage bgImage={bgImage} />} />
           <Route path="/resume" element={<Resume bgImage={bgImage} />} />
         </Routes>
+      </Suspense>
       <Footer />
     </Router>
-    </>
   );
 }
 
