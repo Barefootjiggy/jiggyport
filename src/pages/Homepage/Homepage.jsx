@@ -1,23 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense, memo } from 'react';
 import { Grid, Typography, Avatar, Box, styled } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
-import Projects from '../../components/Projects/Projects';
-import Django from '../../assets/Django.png'; 
-import Express from '../../assets/Express.png'; 
-import MongoDB from '../../assets/MongoDB.png'; 
-import Mongoose from '../../assets/Mongoose.png'; 
-import Mui from '../../assets/Mui.png'; 
-import PostgreSQL from '../../assets/PostgreSQL.png'; 
-import Python from '../../assets/Python.png'; 
-import RadixUI from '../../assets/RadixUI.png'; 
-import ReactLogo from '../../assets/React.png'; 
-import Nodejs from '../../assets/Nodejs.png'; 
-import Css from '../../assets/Css.png'; 
-import Html from '../../assets/Html.png'; 
-import JS from '../../assets/JS.png';
-import Wordpress from '../../assets/Wordpress.png';
-import TypeScript from '../../assets/TypeScript.png'
+import Loader from '../../components/Loader/Loader'
+import { skills } from '../../Skills/Skills';
 import Profilenobg from '../../assets/Nycscnbg.png';
+
+const Projects = lazy(() => import('../../components/Projects/Projects'));
+
 
 const StyledAvatar = styled(Avatar)({
   width: 200, 
@@ -28,7 +17,7 @@ const StyledAvatar = styled(Avatar)({
 
 const CenteredTypography = styled(Typography)(({ bgImage }) => ({
   textAlign: 'center',
-  color: bgImage === '/mountainsky.jpg' ? '#000000' : '#ffffff',
+  color: bgImage === '/mountainsky.webp' ? '#000000' : '#ffffff',
   marginBottom: '20px',
 }));
 
@@ -37,29 +26,34 @@ const ProfileBox = styled(Box)({
   paddingTop: '100px' 
 });
 
-const AnimatedGridItem = ({ name, imageUrl, bgImage }) => {
+const FlickerText = styled(animated(Typography))({
+  textAlign: 'center',
+  marginBottom: '20px',
+});
+
+const AnimatedGridItem = memo(function AnimatedGridItem({ name, imageUrl, bgImage }) {
   const [props, set] = useSpring(() => ({
     transform: 'scale(1)',
     boxShadow: '0px 0px 0px rgba(0,0,0,0)',
     config: { tension: 300, friction: 5 }
   }));
 
-  return (
+return (
     <Grid item xs={4} md={2}
       onMouseEnter={() => set({ transform: 'scale(1.1)', boxShadow: '0px 4px 8px rgba(171,89,139,1)' })}
       onMouseLeave={() => set({ transform: 'scale(1)', boxShadow: '0px 0px 0px rgba(0,0,0,0)' })}
     >
       <animated.div style={props}>
-        <img src={imageUrl} alt={name} style={{ width: '50px', height: '50px', marginBottom: '10px' }} />
+        <img
+          src={imageUrl}
+          alt={name}
+          loading="lazy"
+          style={{ width: '50px', height: '50px', marginBottom: '10px' }}
+        />
         <Typography variant="subtitle2" style={{ color: bgImage === '/mountainsky.jpg' ? '#000000' : '#ffffff' }}>{name}</Typography>
       </animated.div>
     </Grid>
   );
-};
-
-const FlickerText = styled(animated(Typography))({
-  textAlign: 'center',
-  marginBottom: '20px',
 });
 
 function Homepage({ bgImage }) {
@@ -111,30 +105,22 @@ function Homepage({ bgImage }) {
         I’m a full-stack software engineer with a background in healthcare and customer service. After completing General Assembly’s Software Engineering Immersive, I’ve focused on building clean, responsive web apps using React, JavaScript, and modern frameworks. Recently, I redesigned a personal training site, replacing a restrictive WordPress setup with a custom React build that’s faster, more modern, and user-friendly. I bring strong communication, real-world client experience, and a passion for solving problems through thoughtful, accessible design.
         </CenteredTypography>
         <Grid container spacing={2} alignItems="center" justifyContent="center">
-          {createSkillItem("Django", Django, bgImage)}
-          {createSkillItem("Express", Express, bgImage)}
-          {createSkillItem("MongoDB", MongoDB, bgImage)}
-          {createSkillItem("Mongoose", Mongoose, bgImage)}
-          {createSkillItem("Material-UI", Mui, bgImage)}
-          {createSkillItem("PostgreSQL", PostgreSQL, bgImage)}
-          {createSkillItem("Python", Python, bgImage)}
-          {createSkillItem("Radix UI", RadixUI, bgImage)}
-          {createSkillItem("React", ReactLogo, bgImage)} 
-          {createSkillItem("Node.js", Nodejs, bgImage)}
-          {createSkillItem("CSS", Css, bgImage)}
-          {createSkillItem("HTML", Html, bgImage)}
-          {createSkillItem("JavaScript", JS, bgImage)}
-          {createSkillItem("Wordpress", Wordpress, bgImage)}
-          {createSkillItem("TypeScript", TypeScript, bgImage)}
+          {skills.map(skill => (
+            <AnimatedGridItem
+              key={skill.name}
+              name={skill.name}
+              imageUrl={skill.image}
+              bgImage={bgImage}
+            />
+          ))}
         </Grid>
-        <Projects bgImage={bgImage} />
+
+        <Suspense fallback={<Loader />}>
+          <Projects bgImage={bgImage} />
+        </Suspense>
       </ProfileBox>
     </animated.div>
   );
-}
-
-function createSkillItem(name, imageUrl, bgImage) {
-  return <AnimatedGridItem key={name} name={name} imageUrl={imageUrl} bgImage={bgImage} />;
 }
 
 export default Homepage;
