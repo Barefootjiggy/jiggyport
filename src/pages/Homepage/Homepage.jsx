@@ -2,7 +2,7 @@ import { useState, useEffect, lazy, Suspense, memo } from 'react';
 import { Grid, Typography, Avatar, Box, styled } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
 import Loader from '../../components/Loader/Loader'
-import { skills } from '../../Skills/Skills';
+import { skills } from '../../Data/Skills';
 import Profilenobg from '../../assets/Nycscnbg.png';
 
 const Projects = lazy(() => import('../../components/Projects/Projects'));
@@ -34,7 +34,7 @@ const FlickerText = styled(animated(Typography))({
 const AnimatedGridItem = memo(function AnimatedGridItem({ name, imageUrl, bgImage }) {
   const [props, set] = useSpring(() => ({
     transform: 'scale(1)',
-    boxShadow: '0px 0px 0px rgba(0,0,0,0)',
+    boxShadow: '6px 6px 6px rgba(21,15,15,0)',
     config: { tension: 300, friction: 5 }
   }));
 
@@ -50,7 +50,7 @@ return (
           loading="lazy"
           style={{ width: '50px', height: '50px', marginBottom: '10px' }}
         />
-        <Typography variant="subtitle2" style={{ color: bgImage === '/mountainsky.jpg' ? '#000000' : '#ffffff' }}>{name}</Typography>
+        <Typography variant="subtitle2" style={{ color: bgImage === '/mountainsky.webp' ? '#000000' : '#ffffff' }}>{name}</Typography>
       </animated.div>
     </Grid>
   );

@@ -15,6 +15,7 @@ const StyledAppBar = styled(AppBar)`
   top: 0;
   width: 100%;
   z-index: 1000; 
+  margin-top: 20px;
 `;
 
 const StyledIconButton = styled(IconButton)`
@@ -42,12 +43,16 @@ function Header({ onToggleBackground }) {
   };
 
   return (
-    <StyledAppBar className="navbar" style={{ marginTop: '20px' }}>
+    <StyledAppBar 
+    className="navbar"
+    role="navigation"
+    >
       <Toolbar style={{ justifyContent: 'center' }}>
         <Tooltip title="Portfolio">
           <StyledIconButton
+            type="button"
             color="inherit"
-            aria-label="home"
+            aria-label="Go to homepage"
             onClick={() => navigate('/')}
           >
             <HomeIcon />
@@ -55,8 +60,9 @@ function Header({ onToggleBackground }) {
         </Tooltip>
         <Tooltip title="Reach out">
           <StyledIconButton
+            type="button"
             color="inherit"
-            aria-label="email"
+            aria-label="Send email to jpgiant@yahoo.com"
             onClick={() => window.location.href = 'mailto:jpgiant@yahoo.com'}
           >
             <MailIcon />
@@ -64,6 +70,7 @@ function Header({ onToggleBackground }) {
         </Tooltip>
         <Tooltip title="Extended Resume">
           <StyledIconButton
+            type="button"
             color="inherit"
             aria-label="resume"
             onClick={() => navigate('/resume')}
@@ -71,8 +78,12 @@ function Header({ onToggleBackground }) {
             <DescriptionIcon />
           </StyledIconButton>
         </Tooltip>
-        <ToggleButton onClick={handleToggle}>
-          {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+        <ToggleButton
+        type="button"
+        onClick={handleToggle}
+        aria-label={darkMode ? 'Switch to dark mode' : 'Switch to light mode'}
+        >
+        {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
         </ToggleButton>
       </Toolbar>
     </StyledAppBar>

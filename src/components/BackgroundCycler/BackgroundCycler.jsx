@@ -25,7 +25,10 @@ const AnimatedBackground = styled('div')`
 
 function BackgroundCycler({ bgImage }) {
   return (
-    <AnimatedBackground bgImage={bgImage} />
+    <AnimatedBackground 
+    bgImage={bgImage} 
+    aria-hidden="true"
+    />
   );
 }
 

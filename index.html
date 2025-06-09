@@ -2,20 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/astronautinorbit.svg" type="image/svg+xml" />
+
+    <!-- Mobile & browser optimizations -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1F4172" />
+    <meta name="description" content="Full stack developer portfolio of Joshua Pierre. Explore projects, skills, and experience in React, TypeScript, Python, and more." />
+
+    <!-- Title and icons -->
     <title>Jiggy's Portfolio</title>
+    <link rel="icon" href="/astronautinorbit.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" as="image" href="/deepsky.webp" />
+    <link rel="preload" as="image" href="/mountainsky.webp" />
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/zendots/v11/cIf-MaFfvUQxTTobXxgUjHc.woff2" type="font/woff2" crossorigin />
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Jiggy's Portfolio" />
-    <meta property="og:description" content="Discover my portfolio showcasing my coding skills and design expertise" />
+    <meta property="og:description" content="Explore my portfolio showcasing my coding skills" />
     <meta property="og:image" content="/astronautinorbit.jpg" />
     <meta property="og:url" content="https://jiggycodes.com" />
     <meta property="og:type" content="website" />
   </head>
+
   <body>
-    <div id="root"></div>
+    <div id="root" aria-label="Joshua Pierre Portfolio App"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

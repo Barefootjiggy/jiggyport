@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import EducationCard from './EducationCard'; 
 
 function Education() {
@@ -25,9 +25,6 @@ function Education() {
 
   return (
     <Box mt={4} mb={4}>
-      <Typography variant="h5" align="center" gutterBottom sx={{ color: '#000' }}>
-        EDUCATION
-      </Typography>
 
       {education.map((edu, i) => (
         <EducationCard key={i} {...edu} />
