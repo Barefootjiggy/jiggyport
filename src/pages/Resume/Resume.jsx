@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Box, Typography } from '@mui/material';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import Loader from '../../components/Loader/Loader'
 const AboutMe = lazy(() => import('../../components/Cv/AboutMe/AboutMe'));
 const ClientProjects = lazy(() => import('../../components/Cv/CvProjects/ClientProjects'));

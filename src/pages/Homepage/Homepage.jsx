@@ -1,6 +1,6 @@
 import { useState, useEffect, lazy, Suspense, memo } from 'react';
 import { Grid, Typography, Avatar, Box, styled } from '@mui/material';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import Loader from '../../components/Loader/Loader'
 import { skills } from '../../Data/Skills';
 import Profile from '../../assets/Profile.webp';

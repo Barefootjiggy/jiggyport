@@ -1,6 +1,6 @@
 import { Suspense, lazy, useState, useEffect } from 'react';
 import { Typography, Container, useMediaQuery, useTheme } from '@mui/material';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import { makeStyles } from '@mui/styles';
 import { styled } from '@mui/system';
 
