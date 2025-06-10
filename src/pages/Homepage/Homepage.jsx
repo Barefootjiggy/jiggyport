@@ -1,23 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Grid, Typography, Avatar, Box, styled } from '@mui/material';
-import { useSpring, animated } from 'react-spring';
-import Projects from '../../components/Projects/Projects';
-import Django from '../../assets/Django.png'; 
-import Express from '../../assets/Express.png'; 
-import MongoDB from '../../assets/MongoDB.png'; 
-import Mongoose from '../../assets/Mongoose.png'; 
-import Mui from '../../assets/Mui.png'; 
-import PostgreSQL from '../../assets/PostgreSQL.png'; 
-import Python from '../../assets/Python.png'; 
-import RadixUI from '../../assets/RadixUI.png'; 
-import ReactLogo from '../../assets/React.png'; 
-import Nodejs from '../../assets/Nodejs.png'; 
-import Css from '../../assets/Css.png'; 
-import Html from '../../assets/Html.png'; 
-import JS from '../../assets/JS.png';
-import Wordpress from '../../assets/Wordpress.png';
-import TypeScript from '../../assets/TypeScript.png'
-import Profilenobg from '../../assets/Nycscnbg.png';
+import { useSpring, animated } from '@react-spring/web';
+import Loader from '../../components/Loader/Loader'
+import { skills } from '../../Data/Skills';
+import Profile from '../../assets/Profile.webp';
+
+const Projects = lazy(() => import('../../components/Projects/Projects'));
+
 
 const StyledAvatar = styled(Avatar)({
   width: 200, 

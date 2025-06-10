@@ -1,19 +1,21 @@
-import { useSpring, animated } from 'react-spring';
-import { Box, Typography, Paper, styled } from '@mui/material';
+import { lazy, Suspense } from 'react';
+import { Box, Typography } from '@mui/material';
+import { useSpring, animated } from '@react-spring/web';
+import Loader from '../../components/Loader/Loader'
+const AboutMe = lazy(() => import('../../components/Cv/AboutMe/AboutMe'));
+const ClientProjects = lazy(() => import('../../components/Cv/CvProjects/ClientProjects'));
+const TechProjects = lazy(() => import('../../components/Cv/CvProjects/TechProjects'));
+const Experience = lazy(() => import('../../components/Cv/Experience/Experience'));
+const Education = lazy(() => import('../../components/Cv/Education/Education'));
 
-const HeaderBox = styled(Box)(({ bgImage }) => ({
-  textAlign: 'center',
-  marginBottom: '20px',
-  '& h4, & h6, & p, & span': {
-    color: bgImage === '/mountainsky.jpg' ? '#000000' : '#ffffff',
-  }
-}));
-
-const FadeInText = styled(animated(Typography))`
-  color: #000000;
-`;
-
-const FadeInBox = styled(animated(Box))``;
+const AnimatedHeading = ({ children, variant = 'h5', color }) => {
+  const fade = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, config: { duration: 1000 } });
+  return (
+    <animated.div style={fade}>
+      <Typography variant={variant} align="center" gutterBottom style={{ color }}>{children}</Typography>
+    </animated.div>
+  );
+};
 
 function Resume({ bgImage }) {
   const fadeProps = useSpring({
