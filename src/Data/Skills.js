@@ -1,18 +1,18 @@
-import Django from '../assets/Skillimages/DjangoLogo.png'
-import Express from '../assets/Skillimages/ExpressLogo.png'; 
-import MongoDB from '../assets/Skillimages/MongoDBLogo.png'; 
-import Mongoose from '../assets/Skillimages/MongooseLogo.png'; 
-import Mui from '../assets/Skillimages/MuiLogo.png'; 
-import PostgreSQL from '../assets/Skillimages/PostgreSQLLogo.png'; 
-import Python from '../assets/Skillimages/PythonLogo.png'; 
-import RadixUI from '../assets/Skillimages/RadixUILogo.png'; 
-import ReactLogo from '../assets/Skillimages/ReactLogo.png'; 
-import Nodejs from '../assets/Skillimages/NodejsLogo.png'; 
-import Css from '../assets/Skillimages/CssLogo.png'; 
-import Html from '../assets/Skillimages/HtmlLogo.png'; 
-import JS from '../assets/Skillimages/JSLogo.png';
-import Wordpress from '../assets/Skillimages/WordpressLogo.png';
-import TypeScript from '../assets/Skillimages/TypeScriptLogo.png';
+import Django from '../assets/Skillimages/DjangoLogo.webp'
+import Express from '../assets/Skillimages/ExpressLogo.webp'; 
+import MongoDB from '../assets/Skillimages/MongoDBLogo.webp'; 
+import Mongoose from '../assets/Skillimages/MongooseLogo.webp'; 
+import Mui from '../assets/Skillimages/MuiLogo.webp'; 
+import PostgreSQL from '../assets/Skillimages/PostgreSQLLogo.webp'; 
+import Python from '../assets/Skillimages/PythonLogo.webp'; 
+import RadixUI from '../assets/Skillimages/RadixUILogo.webp'; 
+import ReactLogo from '../assets/Skillimages/ReactLogo.webp'; 
+import Nodejs from '../assets/Skillimages/NodejsLogo.webp'; 
+import Css from '../assets/Skillimages/CssLogo.webp'; 
+import Html from '../assets/Skillimages/HtmlLogo.webp'; 
+import JS from '../assets/Skillimages/JSLogo.webp';
+import Wordpress from '../assets/Skillimages/WordpressLogo.webp';
+import TypeScript from '../assets/Skillimages/TypeScriptLogo.webp';
 
 export const skills = [
   { name: "Django", image: Django },
