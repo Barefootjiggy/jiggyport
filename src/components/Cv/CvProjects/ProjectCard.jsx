@@ -1,5 +1,9 @@
+import React from 'react';
 import { Box, Typography, Paper, Fade } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
+
+const MemoizedProjectCard = React.memo(ProjectCard);
+
 
 function ProjectCard({ project, showGithub = true, showURL = true }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -38,4 +42,4 @@ function ProjectCard({ project, showGithub = true, showURL = true }) {
   );
 }
 
-export default ProjectCard;
+export default MemoizedProjectCard;

@@ -1,5 +1,8 @@
+import React from 'react';
 import { Box, Typography, Paper, Fade } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
+
+const MemoizedEducationCard = React.memo(EducationCard);
 
 function EducationCard({ school, location, date, details }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -29,4 +32,4 @@ function EducationCard({ school, location, date, details }) {
   );
 }
 
-export default EducationCard;
+export default MemoizedEducationCard;
