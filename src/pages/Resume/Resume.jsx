@@ -8,11 +8,19 @@ const TechProjects = lazy(() => import('../../components/Cv/CvProjects/TechProje
 const Experience = lazy(() => import('../../components/Cv/Experience/Experience'));
 const Education = lazy(() => import('../../components/Cv/Education/Education'));
 
-const AnimatedHeading = ({ children, variant = 'h5', color }) => {
+const AnimatedHeading = ({ children, variant = 'h5', component = 'h3', color }) => {
   const fade = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, config: { duration: 1000 } });
   return (
     <animated.div style={fade}>
-      <Typography variant={variant} align="center" gutterBottom style={{ color }}>{children}</Typography>
+      <Typography 
+      variant={variant} 
+      component={component}
+      align="center" 
+      gutterBottom 
+      style={{ color }}
+      >
+      {children}
+      </Typography>
     </animated.div>
   );
 };

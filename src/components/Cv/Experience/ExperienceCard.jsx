@@ -1,5 +1,8 @@
+import React from 'react';
 import { Box, Typography, Paper, Fade } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
+
+const MemoizedExperienceCard = React.memo(ExperienceCard);
 
 function ExperienceCard({ title, location, dates, points }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -29,4 +32,4 @@ function ExperienceCard({ title, location, dates, points }) {
   );
 }
 
-export default ExperienceCard;
+export default MemoizedExperienceCard;
