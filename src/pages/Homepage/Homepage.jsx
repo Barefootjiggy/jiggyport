@@ -3,7 +3,7 @@ import { Grid, Typography, Avatar, Box, styled } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
 import Loader from '../../components/Loader/Loader'
 import { skills } from '../../Data/Skills';
-import Profilenobg from '../../assets/Nycscnbg.png';
+import Profile from '../../assets/Profile.webp';
 
 const Projects = lazy(() => import('../../components/Projects/Projects'));
 
@@ -48,9 +48,12 @@ return (
           src={imageUrl}
           alt={name}
           loading="lazy"
-          style={{ width: '50px', height: '50px', marginBottom: '10px' }}
+          style={{ width: 'auto', height: '50px', marginBottom: '10px' }}
         />
-        <Typography variant="subtitle2" style={{ color: bgImage === '/mountainsky.webp' ? '#000000' : '#ffffff' }}>{name}</Typography>
+        <Typography variant="subtitle2"
+        component="p"
+         style={{ color: bgImage === '/mountainsky.webp' ? '#000000' : '#ffffff' }}>{name}
+         </Typography>
       </animated.div>
     </Grid>
   );
@@ -99,7 +102,7 @@ function Homepage({ bgImage }) {
           Joshua Pierre
         </FlickerText>
         <animated.div style={rotateProps}>
-          <StyledAvatar src={Profilenobg} alt="Joshua Pierre" onClick={handleAvatarClick} />
+          <StyledAvatar src={Profile} alt="Photo of Joshua Pierre" onClick={handleAvatarClick} />
         </animated.div>
         <CenteredTypography variant="h6" component="p" padding="0 20px" bgImage={bgImage}>
         I’m a full-stack software engineer with a background in healthcare and customer service. After completing General Assembly’s Software Engineering Immersive, I’ve focused on building clean, responsive web apps using React, JavaScript, and modern frameworks. Recently, I redesigned a personal training site, replacing a restrictive WordPress setup with a custom React build that’s faster, more modern, and user-friendly. I bring strong communication, real-world client experience, and a passion for solving problems through thoughtful, accessible design.

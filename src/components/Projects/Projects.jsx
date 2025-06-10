@@ -86,7 +86,7 @@ export default function Projects({ bgImage }) {
     to: async (next) => {
       while (true) {
         await next({ color: '#ab598b' });
-        await next({ color: '#ffffff' });
+        await next({ color: '#f1b4bb' });
       }
     },
     config: { duration: 2000 },
@@ -97,7 +97,7 @@ export default function Projects({ bgImage }) {
     to: async (next) => {
       while (true) {
         await next({ color: '#ab598b' });
-        await next({ color: '#ffffff' });
+        await next({ color: '#f1b4bb' });
       }
     },
     config: { duration: 2000 },

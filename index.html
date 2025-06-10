@@ -13,18 +13,49 @@
     <link rel="icon" href="/astronautinorbit.svg" type="image/svg+xml" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+   <!-- Fonts: Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" />
     </noscript>
 
-    <!-- Preload critical assets -->
-    <link rel="preload" as="image" href="/deepsky.webp" />
-    <link rel="preload" as="image" href="/mountainsky.webp" />
-    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/zendots/v11/cIf-MaFfvUQxTTobXxgUjHc.woff2" type="font/woff2" crossorigin />
+   <!-- Preload Zen Dots and Roboto font files -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/zendots/v17/2V0cKI0OB5U7WaJCyhe5zA.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxP.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xIIzc.woff2"
+      crossorigin="anonymous"
+    />
+
+    <!-- Load fonts non-blocking -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- Open Graph -->
     <meta property="og:title" content="Jiggy's Portfolio" />
@@ -39,3 +70,4 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+

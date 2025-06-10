@@ -1,18 +1,18 @@
-import Connect4Image from '../assets/ProjectImages/Classic-Connect4-Mobile2.png';
-import WOD4UImage from '../assets/ProjectImages/WOD4U-Mobile.png';
-import DutchImage from '../assets/ProjectImages/Dutch-Mobile.png';
-import CohortyImage from '../assets/ProjectImages/Cohorty-Desktop.png';
+import Connect4Image from '../assets/ProjectImages/Classic-Connect4-Mobile2.webp';
+import WOD4UImage from '../assets/ProjectImages/WOD4U-Mobile.webp';
+import DutchImage from '../assets/ProjectImages/Dutch-Mobile.webp';
+import CohortyImage from '../assets/ProjectImages/Cohorty-Desktop.webp';
 
-import TAJbefore from '../assets/ProjectImages/TAJbefore.png';
-import TAJafter from '../assets/ProjectImages/TAJafter.png';
-import TAJafter2 from '../assets/ProjectImages/TAJafter2.png';
-import TAJafter3 from '../assets/ProjectImages/TAJafter3.png';
-import TAJafter4 from '../assets/ProjectImages/TAJafter4.png';
-import TAJafter5 from '../assets/ProjectImages/TAJafter5.png';
+import TAJbefore from '../assets/ProjectImages/TAJbefore.webp';
+import TAJafter from '../assets/ProjectImages/TAJafter.webp';
+import TAJafter2 from '../assets/ProjectImages/TAJafter2.webp';
+import TAJafter3 from '../assets/ProjectImages/TAJafter3.webp';
+import TAJafter4 from '../assets/ProjectImages/TAJafter4.webp';
+import TAJafter5 from '../assets/ProjectImages/TAJafter5.webp';
 
-import MBTRTlanding from '../assets/ProjectImages/MBTRTlanding.png';
-import MBTRTmockdash from '../assets/ProjectImages/MBTRTmockdash.png';
-import MBTRTclientfeedbacks from '../assets/ProjectImages/MBTRTclientfeedbacks.png';
+import MBTRTlanding from '../assets/ProjectImages/MBTRTlanding.webp';
+import MBTRTmockdash from '../assets/ProjectImages/MBTRTmockdash.webp';
+import MBTRTclientfeedbacks from '../assets/ProjectImages/MBTRTclientfeedbacks.webp';
 
 export const clientProjectsData = [
   {
