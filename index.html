@@ -2,20 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/astronautinorbit.svg" type="image/svg+xml" />
+
+    <!-- Mobile & browser optimizations -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1F4172" />
+    <meta name="description" content="Full stack developer portfolio of Joshua Pierre. Explore projects, skills, and experience in React, TypeScript, Python, and more." />
+
+    <!-- Title and icons -->
     <title>Jiggy's Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="icon" href="/astronautinorbit.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+   <!-- Fonts: Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet" />
+    </noscript>
+
+   <!-- Preload Zen Dots and Roboto font files -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/zendots/v17/2V0cKI0OB5U7WaJCyhe5zA.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxP.woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xIIzc.woff2"
+      crossorigin="anonymous"
+    />
+
+    <!-- Load fonts non-blocking -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Jiggy's Portfolio" />
-    <meta property="og:description" content="Discover my portfolio showcasing my coding skills and design expertise" />
+    <meta property="og:description" content="Explore my portfolio showcasing my coding skills" />
     <meta property="og:image" content="/astronautinorbit.jpg" />
     <meta property="og:url" content="https://jiggycodes.com" />
     <meta property="og:type" content="website" />
   </head>
+
   <body>
-    <div id="root"></div>
+    <div id="root" aria-label="Joshua Pierre Portfolio App"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
