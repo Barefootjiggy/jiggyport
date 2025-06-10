@@ -22,19 +22,32 @@ function Resume({ bgImage }) {
 
   return (
     <Box p={3} pt={10}>
-      <AnimatedHeading variant="h4" color={headingColor}>More About Me</AnimatedHeading>
-      <Suspense fallback={<Loader />}>
-        <AboutMe bgImage={bgImage} />
-        <AnimatedHeading color={headingColor}>CLIENT PROJECTS</AnimatedHeading>
-        <ClientProjects bgImage={bgImage} />
-        <AnimatedHeading color={headingColor}>TECH PROJECTS</AnimatedHeading>
-        <TechProjects bgImage={bgImage} />
-        <AnimatedHeading color={headingColor}>EXPERIENCE</AnimatedHeading>
-        <Experience bgImage={bgImage} />
-        <AnimatedHeading color={headingColor}>EDUCATION</AnimatedHeading>
-        <Education bgImage={bgImage} />
-      </Suspense>
-    </Box>
+  <AnimatedHeading variant="h4" color={headingColor}>More About Me</AnimatedHeading>
+
+  <Suspense fallback={<Loader />}>
+    <AboutMe bgImage={bgImage} />
+  </Suspense>
+
+  <AnimatedHeading color={headingColor}>CLIENT PROJECTS</AnimatedHeading>
+  <Suspense fallback={<Loader />}>
+    <ClientProjects bgImage={bgImage} />
+  </Suspense>
+
+  <AnimatedHeading color={headingColor}>TECH PROJECTS</AnimatedHeading>
+  <Suspense fallback={<Loader />}>
+    <TechProjects bgImage={bgImage} />
+  </Suspense>
+
+  <AnimatedHeading color={headingColor}>EXPERIENCE</AnimatedHeading>
+  <Suspense fallback={<Loader />}>
+    <Experience bgImage={bgImage} />
+  </Suspense>
+
+  <AnimatedHeading color={headingColor}>EDUCATION</AnimatedHeading>
+  <Suspense fallback={<Loader />}>
+    <Education bgImage={bgImage} />
+  </Suspense>
+</Box>
   );
 }
 
